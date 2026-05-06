@@ -1,26 +1,396 @@
-@import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  margin: 0;
+  color: #082b3f;
   font-family: Arial, Helvetica, sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(255, 178, 79, 0.45), transparent 32%),
+    radial-gradient(circle at 85% 15%, rgba(0, 191, 255, 0.45), transparent 30%),
+    radial-gradient(circle at 20% 80%, rgba(108, 231, 222, 0.5), transparent 34%),
+    linear-gradient(135deg, #fff7d6 0%, #dffbff 48%, #ffe2b5 100%);
+}
+
+main {
+  overflow-x: hidden;
+}
+
+.language-btn {
+  position: fixed;
+  top: 18px;
+  right: 18px;
+  z-index: 10;
+  border: none;
+  border-radius: 999px;
+  padding: 11px 20px;
+  background: white;
+  color: #087ca7;
+  font-weight: 900;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.16);
+  cursor: pointer;
+}
+
+.hero {
+  min-height: 92vh;
+  padding: 115px 22px 85px;
+  text-align: center;
+  background:
+    radial-gradient(circle at top left, rgba(255, 166, 48, 0.75), transparent 32%),
+    radial-gradient(circle at bottom right, rgba(0, 191, 255, 0.7), transparent 34%),
+    linear-gradient(135deg, #fff4c2 0%, #74e3e0 50%, #0c78a5 100%);
+  color: #082b3f;
+}
+
+.hero-badge {
+  display: inline-block;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.65);
+  padding: 12px 22px;
+  color: #087ca7;
+  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: 5px;
+  margin-bottom: 26px;
+  box-shadow: 0 12px 28px rgba(8, 43, 63, 0.12);
+}
+
+.hero h1 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(58px, 9vw, 128px);
+  line-height: 0.9;
+  color: #082b3f;
+}
+
+.hero h2 {
+  margin: 30px 0 0;
+  color: #ffffff;
+  font-size: clamp(25px, 3.2vw, 44px);
+  text-shadow: 0 3px 14px rgba(8, 43, 63, 0.3);
+}
+
+.hero-text {
+  max-width: 780px;
+  margin: 24px auto 0;
+  font-size: 22px;
+  line-height: 1.7;
+  font-weight: 700;
+  color: #12384d;
+}
+
+.location {
+  display: inline-block;
+  margin: 24px auto 0;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.65);
+  padding: 14px 22px;
+  font-size: 18px;
+  font-weight: 900;
+  color: #082b3f;
+}
+
+.hero-buttons {
+  margin-top: 36px;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  border-radius: 999px;
+  padding: 17px 30px;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 900;
+  box-shadow: 0 14px 30px rgba(8, 43, 63, 0.16);
+  transition: 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+.primary {
+  background: #f59f22;
+  color: white;
+}
+
+.secondary {
+  background: white;
+  color: #087ca7;
+}
+
+.prices,
+.strokes,
+.map-section {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 70px 22px 35px;
+  text-align: center;
+}
+
+.prices h2,
+.strokes h2,
+.map-section h2,
+.contact h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(42px, 6vw, 62px);
+  margin: 0 0 32px;
+  color: #082b3f;
+}
+
+.price-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.price-card {
+  background: rgba(255, 255, 255, 0.82);
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  border-radius: 34px;
+  padding: 36px 24px;
+  min-height: 230px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0 20px 45px rgba(8, 43, 63, 0.12);
+  backdrop-filter: blur(10px);
+}
+
+.price-card span {
+  font-size: 25px;
+  font-weight: 900;
+}
+
+.price-card strong {
+  margin-top: 20px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 72px;
+}
+
+.price-card small {
+  color: #fff6b5;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 14px;
+}
+
+.popular {
+  background: linear-gradient(135deg, #087ca7, #66d7d1);
+  color: white;
+}
+
+.info-grid {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 35px 22px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+.info-card {
+  background: rgba(255, 255, 255, 0.84);
+  border-radius: 34px;
+  padding: 36px;
+  box-shadow: 0 20px 45px rgba(8, 43, 63, 0.12);
+  backdrop-filter: blur(10px);
+}
+
+.info-card h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 36px;
+  margin-top: 0;
+}
+
+.info-card p {
+  font-size: 20px;
+  font-weight: 800;
+  color: #385466;
+}
+
+.section-subtitle {
+  margin: -20px 0 35px;
+  color: #087ca7;
+  font-size: 20px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.stroke-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.stroke-card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(226, 251, 255, 0.9));
+  border: 2px solid rgba(8, 124, 167, 0.15);
+  border-radius: 30px;
+  padding: 30px 22px;
+  box-shadow: 0 20px 45px rgba(8, 43, 63, 0.1);
+}
+
+.stroke-card span {
+  font-size: 38px;
+}
+
+.stroke-card h3 {
+  margin: 14px 0 8px;
+  color: #087ca7;
+  font-size: 23px;
+}
+
+.stroke-card p {
+  margin: 0;
+  color: #385466;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1.5;
+}
+
+.quick-tips {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.quick-tips p {
+  margin: 0;
+  border-radius: 24px;
+  background: #082b3f;
+  color: white;
+  padding: 20px;
+  font-weight: 900;
+}
+
+.map-section iframe {
+  width: 100%;
+  height: 430px;
+  border: 0;
+  border-radius: 34px;
+  box-shadow: 0 20px 45px rgba(8, 43, 63, 0.16);
+}
+
+.contact {
+  max-width: 1080px;
+  margin: 40px auto;
+  padding: 60px 22px;
+  text-align: center;
+  background:
+    radial-gradient(circle at top left, rgba(245, 159, 34, 0.35), transparent 35%),
+    linear-gradient(135deg, #082b3f, #0b5578);
+  color: white;
+  border-radius: 38px;
+  box-shadow: 0 20px 45px rgba(8, 43, 63, 0.18);
+}
+
+.contact h2 {
+  color: white;
+}
+
+.contact-grid {
+  display: grid;
+  gap: 8px;
+  margin: 24px 0;
+}
+
+.contact p {
+  font-size: 21px;
+  font-weight: 800;
+}
+
+footer {
+  padding: 34px;
+  text-align: center;
+  font-weight: 900;
+  color: #385466;
+}
+
+@media (max-width: 800px) {
+  .price-grid,
+  .info-grid,
+  .stroke-grid,
+  .quick-tips {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding-top: 100px;
+  }
+
+  .hero-badge {
+    letter-spacing: 3px;
+  }
+
+  .contact {
+    margin-left: 18px;
+    margin-right: 18px;
+  }
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+.social-btn {
+  display: inline-block;
+  padding: 14px 24px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 900;
+  font-size: 18px;
+  transition: 0.2s ease;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.16);
+}
+
+.social-btn:hover {
+  transform: translateY(-3px);
+}
+
+.instagram {
+  background: linear-gradient(
+    135deg,
+    #f58529,
+    #dd2a7b,
+    #8134af,
+    #515bd4
+  );
+  color: white;
+}
+
+.tiktok {
+  background: #111;
+  color: white;
+}
+
+.contact-link {
+  display: inline-block;
+  margin: 6px auto;
+  text-decoration: none;
+  color: white;
+  font-size: 21px;
+  font-weight: 800;
+  transition: 0.2s ease;
+}
+
+.contact-link:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+.whatsapp-link {
+  color: #7dffb0;
 }

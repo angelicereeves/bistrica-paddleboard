@@ -1,65 +1,251 @@
-import Image from "next/image";
+"use client";
 
-export default function Home() {
+import { useState } from "react";
+
+type Lang = "en" | "sq";
+
+const whatsapp = "https://wa.me/355696813214";
+const maps =
+  "https://www.google.com/maps/search/?api=1&query=Centrali+Sarande+Albania";
+
+const text = {
+  en: {
+    lang: "Shqip",
+    title: "Bistrica Paddle",
+    subtitle: "Paddle board rentals in Sarandë",
+    desc: "Explore Sarandë from a new perspective. Find us on the beach in front of Restaurant Centrali.",
+    book: "Book on WhatsApp",
+    map: "Open in Google Maps",
+    prices: "Prices",
+    included: "Included",
+    rules: "Quick Rules",
+    strokes: "Basic SUP Strokes",
+    strokesSub: "Beginner should know",
+    contact: "Contact",
+    location: "Promenade Sarandë • In front of Restaurant Centrali",
+    items: ["Free photos", "Beginner friendly", "Easy & fun for everyone"],
+    rulesList: [
+      "Wear your life jacket",
+      "Stay in the safe area",
+      "No alcohol before paddling",
+      "Respect others and the sea",
+    ],
+  },
+  sq: {
+    lang: "English",
+    title: "Bistrica Paddle",
+    subtitle: "Qira paddle board në Sarandë",
+    desc: "Eksploro Sarandën nga një perspektivë e re. Na gjeni në plazh përpara Restaurant Centrali.",
+    book: "Rezervo në WhatsApp",
+    map: "Hape në Google Maps",
+    prices: "Çmimet",
+    included: "Përfshihet",
+    rules: "Rregulla të Shpejta",
+    strokes: "Teknikat Bazë të SUP",
+    strokesSub: "Çfarë duhet të dijë një fillestar",
+    contact: "Kontakt",
+    location: "Promenada Sarandë • Përpara Restaurant Centrali",
+    items: [
+      "Foto falas",
+      "E përshtatshme për fillestarë",
+      "Argëtuese për të gjithë",
+    ],
+    rulesList: [
+      "Vishni jelekun e shpëtimit",
+      "Qëndroni në zonën e sigurt",
+      "Jo alkool para aktivitetit",
+      "Respektoni të tjerët dhe detin",
+    ],
+  },
+};
+
+const strokes = [
+  {
+    icon: "⬆️",
+    enTitle: "Go Straight",
+    sqTitle: "Shko Drejt",
+    enText: "Forward stroke — paddle on one side, close to the board.",
+    sqText: "Goditja përpara — vozit pranë bordit.",
+  },
+  {
+    icon: "✋",
+    enTitle: "Stop",
+    sqTitle: "Ndalo",
+    enText: "Reverse stroke — paddle backwards on one side.",
+    sqText: "Goditja prapa — vozit mbrapsht nga njëra anë.",
+  },
+  {
+    icon: "➡️",
+    enTitle: "Go Right",
+    sqTitle: "Shko Djathtas",
+    enText: "Draw stroke — paddle on the side to turn the board.",
+    sqText: "Goditja anësore — përdoret për të kthyer bordin.",
+  },
+  {
+    icon: "⬅️",
+    enTitle: "Go Left",
+    sqTitle: "Shko Majtas",
+    enText: "Draw stroke — paddle on the side to turn the board.",
+    sqText: "Goditja anësore — përdoret për të kthyer bordin.",
+  },
+  {
+    icon: "↪️",
+    enTitle: "Turn Right",
+    sqTitle: "Kthehu Djathtas",
+    enText: "Use a sweep stroke or cross bow stroke on the left side.",
+    sqText: "Përdor goditjen e gjerë ose diagonale nga ana e majtë.",
+  },
+  {
+    icon: "↩️",
+    enTitle: "Turn Left",
+    sqTitle: "Kthehu Majtas",
+    enText: "Use a sweep stroke or cross bow stroke on the right side.",
+    sqText: "Përdor goditjen e gjerë ose diagonale nga ana e djathtë.",
+  },
+];
+
+export default function HomePage() {
+  const [lang, setLang] = useState<Lang>("en");
+  const t = text[lang];
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+    <main>
+      <button
+        className="language-btn"
+        onClick={() => setLang(lang === "en" ? "sq" : "en")}
+      >
+        {t.lang}
+      </button>
+
+      <section className="hero">
+        <div className="hero-badge">🌊 SARANDË • ALBANIA</div>
+
+        <h1>{t.title}</h1>
+        <h2>{t.subtitle}</h2>
+
+        <p className="hero-text">{t.desc}</p>
+        <p className="location">📍 {t.location}</p>
+
+        <div className="hero-buttons">
+          <a href={whatsapp} target="_blank" className="btn primary">
+            💬 {t.book}
+          </a>
+
+          <a href={maps} target="_blank" className="btn secondary">
+            📍 {t.map}
+          </a>
+        </div>
+      </section>
+
+      <section className="prices">
+        <h2>{t.prices}</h2>
+
+        <div className="price-grid">
+          <div className="price-card">
+            <span>🏄‍♂️ 1 Hour</span>
+            <strong>10€</strong>
+          </div>
+
+          <div className="price-card">
+            <span>🌊 2 Hours</span>
+            <strong>18€</strong>
+          </div>
+
+          <div className="price-card popular">
+            <small>Most Popular</small>
+            <span>🌅 Sunset Paddle</span>
+            <strong>15€</strong>
+          </div>
+        </div>
+      </section>
+
+      <section className="info-grid">
+        <div className="info-card">
+          <h2>📸 {t.included}</h2>
+          {t.items.map((item) => (
+            <p key={item}>✓ {item}</p>
+          ))}
+        </div>
+
+        <div className="info-card">
+          <h2>🦺 {t.rules}</h2>
+          {t.rulesList.map((rule) => (
+            <p key={rule}>✓ {rule}</p>
+          ))}
+        </div>
+      </section>
+
+      <section className="strokes">
+        <h2>{t.strokes}</h2>
+        <p className="section-subtitle">{t.strokesSub}</p>
+
+        <div className="stroke-grid">
+          {strokes.map((stroke) => (
+            <div className="stroke-card" key={stroke.enTitle}>
+              <span>{stroke.icon}</span>
+              <h3>{lang === "en" ? stroke.enTitle : stroke.sqTitle}</h3>
+              <p>{lang === "en" ? stroke.enText : stroke.sqText}</p>
+            </div>
+          ))}
+        </div>
+
+        <div className="quick-tips">
+          <p>🛡️ {lang === "en" ? "Keep your core tight" : "Mbaj trupin stabil"}</p>
+          <p>🌊 {lang === "en" ? "Look ahead" : "Shiko përpara"}</p>
+          <p>☀️ {lang === "en" ? "Enjoy the ride" : "Shijo udhëtimin"}</p>
+        </div>
+      </section>
+
+      <section className="map-section">
+        <h2>{lang === "en" ? "Find Us" : "Na Gjeni"}</h2>
+
+        <iframe
+          src="https://www.google.com/maps?q=Centrali+Sarande+Albania&output=embed"
+          loading="lazy"
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      </section>
+
+      <section className="contact">
+        <h2>{t.contact}</h2>
+
+        <div className="contact-grid">
+  <a href="tel:+355693464901" className="contact-link">
+    📞 Call: +355 69 346 4901
+  </a>
+
+  <a
+    href="https://wa.me/355696813214"
+    target="_blank"
+    className="contact-link whatsapp-link"
+  >
+    💬 WhatsApp: +355 69 681 3214
+  </a>
+
+  <div className="social-links">
+    <a
+      href="https://www.instagram.com/bistrica_paddle_saranda/"
+      target="_blank"
+      className="social-btn instagram"
+    >
+      📸 Instagram
+    </a>
+
+    <a
+      href="https://www.tiktok.com/@bistrica_paddle_saranda"
+      target="_blank"
+      className="social-btn tiktok"
+    >
+      🎵 TikTok
+    </a>
+  </div>
+</div>
+
+        <a href={whatsapp} target="_blank" className="btn primary">
+          💬 {t.book}
+        </a>
+      </section>
+
+      <footer>Bistrica Paddle • Sarandë, Albania</footer>
+    </main>
   );
 }
