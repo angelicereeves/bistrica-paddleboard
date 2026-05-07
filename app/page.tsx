@@ -117,26 +117,68 @@ export default function HomePage() {
         {t.lang}
       </button>
 
-      <section className="hero">
-        <div className="hero-badge">🌊 SARANDË • ALBANIA</div>
+      {/* HERO SECTION */}
+      <section
+        className="hero"
+        style={{
+          backgroundImage: "url('/sunset.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          position: "relative",
+        }}
+      >
+        {/* Overlay */}
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            background:
+              "linear-gradient(to bottom, rgba(0,0,0,0.45), rgba(0,0,0,0.55))",
+            zIndex: 1,
+          }}
+        />
 
-        <h1>{t.title}</h1>
-        <h2>{t.subtitle}</h2>
+        {/* Hero Content */}
+        <div
+          style={{
+            position: "relative",
+            zIndex: 2,
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
+          <div className="hero-badge">🌊 SARANDË • ALBANIA</div>
 
-        <p className="hero-text">{t.desc}</p>
-        <p className="location">📍 {t.location}</p>
+          <h1>{t.title}</h1>
+          <h2>{t.subtitle}</h2>
 
-        <div className="hero-buttons">
-          <a href={whatsapp} target="_blank" className="btn primary">
-            💬 {t.book}
-          </a>
+          <p
+  className="hero-text"
+  style={{
+    color: "#ffffff",
+    textShadow: "0 2px 10px rgba(0,0,0,0.8)",
+    fontWeight: 500,
+  }}
+>
+  {t.desc}
+</p>
+          <p className="location">📍 {t.location}</p>
 
-          <a href={maps} target="_blank" className="btn secondary">
-            📍 {t.map}
-          </a>
+          <div className="hero-buttons">
+            <a href={whatsapp} target="_blank" className="btn primary">
+              💬 {t.book}
+            </a>
+
+            <a href={maps} target="_blank" className="btn secondary">
+              📍 {t.map}
+            </a>
+          </div>
         </div>
       </section>
 
+      {/* PRICES */}
       <section className="prices">
         <h2>{t.prices}</h2>
 
@@ -159,6 +201,7 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* INFO */}
       <section className="info-grid">
         <div className="info-card">
           <h2>📸 {t.included}</h2>
@@ -175,6 +218,7 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* STROKES */}
       <section className="strokes">
         <h2>{t.strokes}</h2>
         <p className="section-subtitle">{t.strokesSub}</p>
@@ -190,12 +234,15 @@ export default function HomePage() {
         </div>
 
         <div className="quick-tips">
-          <p>🛡️ {lang === "en" ? "Keep your core tight" : "Mbaj trupin stabil"}</p>
+          <p>
+            🛡️ {lang === "en" ? "Keep your core tight" : "Mbaj trupin stabil"}
+          </p>
           <p>🌊 {lang === "en" ? "Look ahead" : "Shiko përpara"}</p>
           <p>☀️ {lang === "en" ? "Enjoy the ride" : "Shijo udhëtimin"}</p>
         </div>
       </section>
 
+      {/* MAP */}
       <section className="map-section">
         <h2>{lang === "en" ? "Find Us" : "Na Gjeni"}</h2>
 
@@ -205,40 +252,41 @@ export default function HomePage() {
         />
       </section>
 
+      {/* CONTACT */}
       <section className="contact">
         <h2>{t.contact}</h2>
 
         <div className="contact-grid">
-  <a href="tel:+355693464901" className="contact-link">
-    📞 Call: +355 69 346 4901
-  </a>
+          <a href="tel:+355693464901" className="contact-link">
+            📞 Call: +355 69 346 4901
+          </a>
 
-  <a
-    href="https://wa.me/355696813214"
-    target="_blank"
-    className="contact-link whatsapp-link"
-  >
-    💬 WhatsApp: +355 69 681 3214
-  </a>
+          <a
+            href="https://wa.me/355696813214"
+            target="_blank"
+            className="contact-link whatsapp-link"
+          >
+            💬 WhatsApp: +355 69 681 3214
+          </a>
 
-  <div className="social-links">
-    <a
-      href="https://www.instagram.com/bistrica_paddle_saranda/"
-      target="_blank"
-      className="social-btn instagram"
-    >
-      📸 Instagram
-    </a>
+          <div className="social-links">
+            <a
+              href="https://www.instagram.com/bistrica_paddle_saranda/"
+              target="_blank"
+              className="social-btn instagram"
+            >
+              📸 Instagram
+            </a>
 
-    <a
-      href="https://www.tiktok.com/@bistrica_paddle_saranda"
-      target="_blank"
-      className="social-btn tiktok"
-    >
-      🎵 TikTok
-    </a>
-  </div>
-</div>
+            <a
+              href="https://www.tiktok.com/@bistrica_paddle_saranda"
+              target="_blank"
+              className="social-btn tiktok"
+            >
+              🎵 TikTok
+            </a>
+          </div>
+        </div>
 
         <a href={whatsapp} target="_blank" className="btn primary">
           💬 {t.book}
