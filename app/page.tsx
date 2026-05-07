@@ -20,7 +20,7 @@ const text = {
     included: "Included",
     rules: "Quick Rules",
     strokes: "Basic SUP Strokes",
-    strokesSub: "Beginner should know",
+    strokesSub: "Beginners should know",
     contact: "Contact",
     location: "Promenade Sarandë • In front of Restaurant Centrali",
     items: ["Free photos", "Beginner friendly", "Easy & fun for everyone"],
