@@ -129,7 +129,6 @@ export default function HomePage() {
           position: "relative",
         }}
       >
-        {/* Overlay */}
         <div
           style={{
             position: "absolute",
@@ -140,7 +139,6 @@ export default function HomePage() {
           }}
         />
 
-        {/* Hero Content */}
         <div
           style={{
             position: "relative",
@@ -150,7 +148,6 @@ export default function HomePage() {
             alignItems: "center",
           }}
         >
-          {/* LOGO */}
           <div
             style={{
               marginBottom: "1.5rem",
@@ -204,6 +201,30 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* PADDLE IMAGE 1 */}
+      <section
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          padding: "4rem 1.5rem 2rem",
+        }}
+      >
+        <Image
+          src="/paddle1.png"
+          alt="Paddle Board Instructions 1"
+          width={900}
+          height={1200}
+          style={{
+            width: "100%",
+            maxWidth: "850px",
+            height: "auto",
+            borderRadius: "24px",
+            boxShadow: "0 10px 35px rgba(0,0,0,0.2)",
+            border: "4px solid white",
+          }}
+        />
+      </section>
+
       {/* PRICES */}
       <section className="prices">
         <h2>{t.prices}</h2>
@@ -249,18 +270,21 @@ export default function HomePage() {
         <h2>{t.strokes}</h2>
         <p className="section-subtitle">{t.strokesSub}</p>
 
-        {/* INSTRUCTIONS IMAGE */}
+        {/* PADDLE IMAGE 2 */}
         <div
           style={{
             display: "flex",
-            justifyContent: "center",
+            flexDirection: "column",
+            alignItems: "center",
+            gap: "2rem",
             marginBottom: "3rem",
             marginTop: "2rem",
+            width: "100%",
           }}
         >
           <Image
-            src="/paddleinstructions.JPG"
-            alt="Paddle Board Instructions"
+            src="/paddle2.png"
+            alt="Paddle Board Instructions 2"
             width={900}
             height={1200}
             style={{
