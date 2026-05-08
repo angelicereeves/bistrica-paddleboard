@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 
 type Lang = "en" | "sq";
 
@@ -149,21 +150,46 @@ export default function HomePage() {
             alignItems: "center",
           }}
         >
+          {/* LOGO */}
+          <div
+            style={{
+              marginBottom: "1.5rem",
+            }}
+          >
+            <Image
+              src="/logo.JPG"
+              alt="Bistrica Paddle Logo"
+              width={220}
+              height={220}
+              priority
+              style={{
+                width: "160px",
+                height: "160px",
+                objectFit: "cover",
+                borderRadius: "999px",
+                boxShadow: "0 8px 30px rgba(0,0,0,0.35)",
+                border: "4px solid rgba(255,255,255,0.85)",
+                background: "rgba(255,255,255,0.85)",
+              }}
+            />
+          </div>
+
           <div className="hero-badge">🌊 SARANDË • ALBANIA</div>
 
           <h1>{t.title}</h1>
           <h2>{t.subtitle}</h2>
 
           <p
-  className="hero-text"
-  style={{
-    color: "#ffffff",
-    textShadow: "0 2px 10px rgba(0,0,0,0.8)",
-    fontWeight: 500,
-  }}
->
-  {t.desc}
-</p>
+            className="hero-text"
+            style={{
+              color: "#ffffff",
+              textShadow: "0 2px 10px rgba(0,0,0,0.8)",
+              fontWeight: 500,
+            }}
+          >
+            {t.desc}
+          </p>
+
           <p className="location">📍 {t.location}</p>
 
           <div className="hero-buttons">
@@ -222,6 +248,31 @@ export default function HomePage() {
       <section className="strokes">
         <h2>{t.strokes}</h2>
         <p className="section-subtitle">{t.strokesSub}</p>
+
+        {/* INSTRUCTIONS IMAGE */}
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            marginBottom: "3rem",
+            marginTop: "2rem",
+          }}
+        >
+          <Image
+            src="/paddleinstructions.JPG"
+            alt="Paddle Board Instructions"
+            width={900}
+            height={1200}
+            style={{
+              width: "100%",
+              maxWidth: "850px",
+              height: "auto",
+              borderRadius: "24px",
+              boxShadow: "0 10px 35px rgba(0,0,0,0.2)",
+              border: "4px solid white",
+            }}
+          />
+        </div>
 
         <div className="stroke-grid">
           {strokes.map((stroke) => (
