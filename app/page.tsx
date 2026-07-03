@@ -237,11 +237,11 @@ const text = {
 
 const yogaExperience = {
   en: {
-    heading: "{y.heading}",
-    price: "{y.price}",
+    heading: "🌊 Ready to take your yoga practice to the water? 🧘‍♂️✨",
+    price: "🧘 SUP Yoga • 20€ per person",
     intro:
       "Discover the perfect balance of strength, mindfulness, and nature with our SUP Yoga Class! Specially designed for beginners, this experience will help you disconnect from the routine and connect with the water.",
-    together: "{y.together}",
+    together: "Here is what we will experience together:",
     items: [
       {
         title: "📋 Safety First",
@@ -267,7 +267,7 @@ const yogaExperience = {
     noExperience:
       "No previous SUP or yoga experience required! Just bring your energy and a desire to try something amazing. 🏄‍♂️☀️",
     limited:
-      "{y.limited}",
+      "🚀 Spaces are limited to ensure everyone gets personal attention.",
   },
   sq: {
     heading: "🌊 Gati ta çosh praktikën tënde të yogës mbi ujë? 🧘‍♂️✨",
