@@ -495,7 +495,7 @@ export default function HomePage() {
 
 
 
-      <section
+            <section
         style={{
           padding: "5rem 1.5rem",
           background: "linear-gradient(135deg, #f7fcff 0%, #e8f7fb 100%)",
@@ -511,100 +511,11 @@ export default function HomePage() {
             alignItems: "center",
           }}
         >
-          <div>
-            <div
-              style={{
-                display: "inline-block",
-                marginBottom: "1rem",
-                padding: "0.5rem 1rem",
-                borderRadius: "999px",
-                background: "rgba(10, 93, 120, 0.1)",
-                color: "#0a5d78",
-                fontWeight: 700,
-              }}
-            >
-              🌊 BEGINNER FRIENDLY
-            </div>
-
-            <h2
-              style={{
-                fontSize: "2.5rem",
-                color: "#0a5d78",
-                marginBottom: "1rem",
-              }}
-            >
-              🧘 {t.yoga}
-            </h2>
-
-                  <div
-        style={{
-          display: "inline-block",
-          background: "#0a5d78",
-          color: "white",
-          padding: "0.5rem 1rem",
-          borderRadius: "999px",
-          fontWeight: 700,
-          marginBottom: "1.5rem",
-        }}
-      >
-        🧘 SUP Yoga • 20€ per person
-      </div>
-
-<h3
-              style={{
-                fontSize: "1.5rem",
-                marginBottom: "1rem",
-                color: "#143642",
-              }}
-            >
-              {t.yogaTitle}
-            </h3>
-
-            <p
-              style={{
-                lineHeight: 1.8,
-                marginBottom: "1.5rem",
-                color: "#284b57",
-                fontSize: "1.05rem",
-              }}
-            >
-              {t.yogaDesc}
-            </p>
-
-            <div
-              style={{
-                display: "grid",
-                gap: "0.75rem",
-                marginBottom: "2rem",
-              }}
-            >
-              {t.yogaList.map((item) => (
-                <p
-                  key={item}
-                  style={{
-                    margin: 0,
-                    padding: "0.85rem 1rem",
-                    borderRadius: "14px",
-                    background: "rgba(255,255,255,0.8)",
-                    boxShadow: "0 6px 18px rgba(0,0,0,0.06)",
-                  }}
-                >
-                  ✓ {item}
-                </p>
-              ))}
-            </div>
-
-            <a
-              href={whatsapp}
-              target="_blank"
-              className="btn primary"
-              style={{ display: "inline-block" }}
-            >
-              💬 {t.yogaBook}
-            </a>
-          </div>
-
-          <div>
+          <div
+            style={{
+              order: 1,
+            }}
+          >
             <Image
               src="/yoga1.jpg"
               alt="SUP Yoga class on paddle boards in Sarandë"
@@ -618,6 +529,161 @@ export default function HomePage() {
                 border: "4px solid white",
               }}
             />
+          </div>
+
+          <div
+            style={{
+              textAlign: "center",
+              order: 2,
+            }}
+          >
+            <h2
+              style={{
+                fontSize: "2.3rem",
+                color: "#0a5d78",
+                marginBottom: "1rem",
+                lineHeight: 1.2,
+              }}
+            >
+              🌊 Ready to take your yoga practice to the water? 🧘‍♂️✨
+            </h2>
+
+            <div
+              style={{
+                display: "inline-block",
+                background: "#0a5d78",
+                color: "white",
+                padding: "0.5rem 1rem",
+                borderRadius: "999px",
+                fontWeight: 700,
+                marginBottom: "1.5rem",
+              }}
+            >
+              🧘 SUP Yoga • 20€ per person
+            </div>
+
+            <p
+              style={{
+                lineHeight: 1.8,
+                marginBottom: "1.5rem",
+                color: "#284b57",
+                fontSize: "1.05rem",
+              }}
+            >
+              Discover the perfect balance of strength, mindfulness, and nature
+              with our SUP Yoga Class! Specially designed for beginners, this
+              experience will help you disconnect from the routine and connect
+              with the water.
+            </p>
+
+            <h3
+              style={{
+                fontSize: "1.35rem",
+                marginBottom: "1rem",
+                color: "#143642",
+              }}
+            >
+              Here is what we will experience together:
+            </h3>
+
+            <div
+              style={{
+                display: "grid",
+                gap: "0.85rem",
+                marginBottom: "2rem",
+              }}
+            >
+              {[
+                {
+                  title: "📋 Safety First",
+                  desc: "A quick briefing on land to get you comfortable and confident on your board.",
+                },
+                {
+                  title: "🌬️ Centering & Breathing",
+                  desc: "Mindful breathing (Pranayama) to ground yourself and sync with the gentle movement of the water.",
+                },
+                {
+                  title: "🧘 Gentle Warm-up",
+                  desc: "Low-to-the-board poses to easily adapt to the board's stability.",
+                },
+                {
+                  title: "🔥 Active Flow",
+                  desc: "Fun, balance-focused poses to challenge and empower you.",
+                },
+                {
+                  title: "🌌 Floating Savasana",
+                  desc: "The ultimate relaxation—lying down on your board, listening to the water, and drifting into pure bliss.",
+                },
+              ].map((item) => (
+                <div
+                  key={item.title}
+                  style={{
+                    margin: 0,
+                    padding: "0.95rem 1rem",
+                    borderRadius: "14px",
+                    background: "rgba(255,255,255,0.85)",
+                    boxShadow: "0 6px 18px rgba(0,0,0,0.06)",
+                    textAlign: "center",
+                  }}
+                >
+                  <strong
+                    style={{
+                      display: "block",
+                      color: "#0a5d78",
+                      marginBottom: "0.35rem",
+                    }}
+                  >
+                    {item.title}
+                  </strong>
+                  <span
+                    style={{
+                      color: "#284b57",
+                      lineHeight: 1.6,
+                    }}
+                  >
+                    {item.desc}
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            <p
+              style={{
+                lineHeight: 1.8,
+                marginBottom: "1rem",
+                color: "#284b57",
+                fontSize: "1.05rem",
+                fontWeight: 600,
+              }}
+            >
+              No previous SUP or yoga experience required! Just bring your energy
+              and a desire to try something amazing. 🏄‍♂️☀️
+            </p>
+
+            <p
+              style={{
+                lineHeight: 1.8,
+                marginBottom: "2rem",
+                color: "#284b57",
+                fontSize: "1.05rem",
+                fontWeight: 600,
+              }}
+            >
+              🚀 Spaces are limited to ensure everyone gets personal attention.
+            </p>
+
+            <a
+              href={whatsapp}
+              target="_blank"
+              className="btn primary"
+              style={{
+                display: "inline-block",
+                marginLeft: "auto",
+                marginRight: "auto",
+              }}
+            >
+              💬 {t.yogaBook}
+            </a>
           </div>
         </div>
       </section>
