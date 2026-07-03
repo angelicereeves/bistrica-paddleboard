@@ -234,6 +234,175 @@ const text = {
   },
 };
 
+
+const yogaExperience = {
+  en: {
+    heading: "{y.heading}",
+    price: "{y.price}",
+    intro:
+      "Discover the perfect balance of strength, mindfulness, and nature with our SUP Yoga Class! Specially designed for beginners, this experience will help you disconnect from the routine and connect with the water.",
+    together: "{y.together}",
+    items: [
+      {
+        title: "📋 Safety First",
+        desc: "A quick briefing on land to get you comfortable and confident on your board.",
+      },
+      {
+        title: "🌬️ Centering & Breathing",
+        desc: "Mindful breathing (Pranayama) to ground yourself and sync with the gentle movement of the water.",
+      },
+      {
+        title: "🧘 Gentle Warm-up",
+        desc: "Low-to-the-board poses to easily adapt to the board's stability.",
+      },
+      {
+        title: "🔥 Active Flow",
+        desc: "Fun, balance-focused poses to challenge and empower you.",
+      },
+      {
+        title: "🌌 Floating Savasana",
+        desc: "The ultimate relaxation—lying down on your board, listening to the water, and drifting into pure bliss.",
+      },
+    ],
+    noExperience:
+      "No previous SUP or yoga experience required! Just bring your energy and a desire to try something amazing. 🏄‍♂️☀️",
+    limited:
+      "{y.limited}",
+  },
+  sq: {
+    heading: "🌊 Gati ta çosh praktikën tënde të yogës mbi ujë? 🧘‍♂️✨",
+    price: "🧘 SUP Yoga • 20€ për person",
+    intro:
+      "Zbulo balancën perfekte mes forcës, ndërgjegjësimit dhe natyrës me klasën tonë SUP Yoga! E krijuar posaçërisht për fillestarë, kjo eksperiencë do të të ndihmojë të shkëputesh nga rutina dhe të lidhesh me ujin.",
+    together: "Ja çfarë do të përjetojmë së bashku:",
+    items: [
+      {
+        title: "📋 Siguria Së Pari",
+        desc: "Një udhëzim i shkurtër në tokë për t’u ndier rehat dhe i sigurt mbi bord.",
+      },
+      {
+        title: "🌬️ Qendërzim & Frymëmarrje",
+        desc: "Frymëmarrje e ndërgjegjshme (Pranayama) për t’u qetësuar dhe për t’u sinkronizuar me lëvizjen e butë të ujit.",
+      },
+      {
+        title: "🧘 Ngrohje e Lehtë",
+        desc: "Pozicione pranë bordit për t’u përshtatur lehtë me stabilitetin e tij.",
+      },
+      {
+        title: "🔥 Flow Aktiv",
+        desc: "Pozicione argëtuese me fokus te balanca për të të sfiduar dhe fuqizuar.",
+      },
+      {
+        title: "🌌 Floating Savasana",
+        desc: "Relaksimi përfundimtar—shtrirë mbi bord, duke dëgjuar ujin dhe duke u zhytur në qetësi të plotë.",
+      },
+    ],
+    noExperience:
+      "Nuk kërkohet eksperiencë e mëparshme në SUP apo yoga! Sill vetëm energjinë tënde dhe dëshirën për të provuar diçka të mrekullueshme. 🏄‍♂️☀️",
+    limited:
+      "🚀 Vendet janë të kufizuara për t’i dhënë secilit vëmendje personale.",
+  },
+  fr: {
+    heading: "🌊 Prêt à emmener votre pratique du yoga sur l’eau ? 🧘‍♂️✨",
+    price: "🧘 SUP Yoga • 20€ par personne",
+    intro:
+      "Découvrez l’équilibre parfait entre force, pleine conscience et nature avec notre cours de SUP Yoga ! Spécialement conçu pour les débutants, cette expérience vous aidera à vous déconnecter de la routine et à vous connecter à l’eau.",
+    together: "Voici ce que nous vivrons ensemble :",
+    items: [
+      {
+        title: "📋 La Sécurité Avant Tout",
+        desc: "Un court briefing sur la terre ferme pour vous sentir à l’aise et confiant sur votre planche.",
+      },
+      {
+        title: "🌬️ Centrage & Respiration",
+        desc: "Respiration consciente (Pranayama) pour vous ancrer et vous synchroniser avec le doux mouvement de l’eau.",
+      },
+      {
+        title: "🧘 Échauffement Doux",
+        desc: "Des postures près de la planche pour s’adapter facilement à sa stabilité.",
+      },
+      {
+        title: "🔥 Flow Actif",
+        desc: "Des postures amusantes axées sur l’équilibre pour vous challenger et vous renforcer.",
+      },
+      {
+        title: "🌌 Savasana Flottant",
+        desc: "La relaxation ultime — allongé sur votre planche, à l’écoute de l’eau, en pleine détente.",
+      },
+    ],
+    noExperience:
+      "Aucune expérience préalable en SUP ou en yoga n’est requise ! Apportez simplement votre énergie et l’envie d’essayer quelque chose d’incroyable. 🏄‍♂️☀️",
+    limited:
+      "🚀 Les places sont limitées afin que chacun bénéficie d’une attention personnalisée.",
+  },
+  it: {
+    heading: "🌊 Pronto a portare la tua pratica yoga sull’acqua? 🧘‍♂️✨",
+    price: "🧘 SUP Yoga • 20€ a persona",
+    intro:
+      "Scopri il perfetto equilibrio tra forza, consapevolezza e natura con la nostra lezione di SUP Yoga! Pensata appositamente per principianti, questa esperienza ti aiuterà a staccare dalla routine e a connetterti con l’acqua.",
+    together: "Ecco cosa vivremo insieme:",
+    items: [
+      {
+        title: "📋 Sicurezza Prima di Tutto",
+        desc: "Un breve briefing a terra per farti sentire comodo e sicuro sulla tavola.",
+      },
+      {
+        title: "🌬️ Centratura & Respirazione",
+        desc: "Respirazione consapevole (Pranayama) per radicarti e sincronizzarti con il dolce movimento dell’acqua.",
+      },
+      {
+        title: "🧘 Riscaldamento Dolce",
+        desc: "Posizioni basse sulla tavola per adattarti facilmente alla sua stabilità.",
+      },
+      {
+        title: "🔥 Flow Attivo",
+        desc: "Posizioni divertenti focalizzate sull’equilibrio per sfidarti e darti energia.",
+      },
+      {
+        title: "🌌 Savasana Galleggiante",
+        desc: "Il relax definitivo—sdraiato sulla tavola, ascoltando l’acqua e lasciandoti andare al benessere.",
+      },
+    ],
+    noExperience:
+      "Non è richiesta alcuna esperienza precedente di SUP o yoga! Porta solo la tua energia e la voglia di provare qualcosa di fantastico. 🏄‍♂️☀️",
+    limited:
+      "🚀 I posti sono limitati per garantire attenzione personale a tutti.",
+  },
+  es: {
+    heading: "🌊 ¿Listo para llevar tu práctica de yoga al agua? 🧘‍♂️✨",
+    price: "🧘 SUP Yoga • 20€ por persona",
+    intro:
+      "Descubre el equilibrio perfecto entre fuerza, mindfulness y naturaleza con nuestra clase de SUP Yoga. Diseñada especialmente para principiantes, esta experiencia te ayudará a desconectarte de la rutina y conectar con el agua.",
+    together: "Esto es lo que viviremos juntos:",
+    items: [
+      {
+        title: "📋 Seguridad Primero",
+        desc: "Una breve explicación en tierra para que te sientas cómodo y seguro sobre tu tabla.",
+      },
+      {
+        title: "🌬️ Centro & Respiración",
+        desc: "Respiración consciente (Pranayama) para conectar contigo y sincronizarte con el suave movimiento del agua.",
+      },
+      {
+        title: "🧘 Calentamiento Suave",
+        desc: "Posturas cerca de la tabla para adaptarte fácilmente a su estabilidad.",
+      },
+      {
+        title: "🔥 Flow Activo",
+        desc: "Posturas divertidas enfocadas en el equilibrio para desafiarte y empoderarte.",
+      },
+      {
+        title: "🌌 Savasana Flotante",
+        desc: "La relajación definitiva: acostarte sobre tu tabla, escuchar el agua y dejarte llevar por la calma.",
+      },
+    ],
+    noExperience:
+      "¡No se requiere experiencia previa en SUP ni yoga! Solo trae tu energía y ganas de probar algo increíble. 🏄‍♂️☀️",
+    limited:
+      "🚀 Las plazas son limitadas para asegurar atención personal para todos.",
+  },
+};
+
 const strokes = [
   {
     icon: "⬆️",
@@ -342,6 +511,7 @@ const strokes = [
 export default function HomePage() {
   const [lang, setLang] = useState<Lang>("en");
   const t = text[lang];
+  const y = yogaExperience[lang];
 
   return (
     <main>
@@ -545,7 +715,7 @@ export default function HomePage() {
                 lineHeight: 1.2,
               }}
             >
-              🌊 Ready to take your yoga practice to the water? 🧘‍♂️✨
+              {y.heading}
             </h2>
 
             <div
@@ -559,7 +729,7 @@ export default function HomePage() {
                 marginBottom: "1.5rem",
               }}
             >
-              🧘 SUP Yoga • 20€ per person
+              {y.price}
             </div>
 
             <p
@@ -570,10 +740,7 @@ export default function HomePage() {
                 fontSize: "1.05rem",
               }}
             >
-              Discover the perfect balance of strength, mindfulness, and nature
-              with our SUP Yoga Class! Specially designed for beginners, this
-              experience will help you disconnect from the routine and connect
-              with the water.
+              {y.intro}
             </p>
 
             <h3
@@ -583,7 +750,7 @@ export default function HomePage() {
                 color: "#143642",
               }}
             >
-              Here is what we will experience together:
+              {y.together}
             </h3>
 
             <div
@@ -593,28 +760,7 @@ export default function HomePage() {
                 marginBottom: "2rem",
               }}
             >
-              {[
-                {
-                  title: "📋 Safety First",
-                  desc: "A quick briefing on land to get you comfortable and confident on your board.",
-                },
-                {
-                  title: "🌬️ Centering & Breathing",
-                  desc: "Mindful breathing (Pranayama) to ground yourself and sync with the gentle movement of the water.",
-                },
-                {
-                  title: "🧘 Gentle Warm-up",
-                  desc: "Low-to-the-board poses to easily adapt to the board's stability.",
-                },
-                {
-                  title: "🔥 Active Flow",
-                  desc: "Fun, balance-focused poses to challenge and empower you.",
-                },
-                {
-                  title: "🌌 Floating Savasana",
-                  desc: "The ultimate relaxation—lying down on your board, listening to the water, and drifting into pure bliss.",
-                },
-              ].map((item) => (
+              {y.items.map((item) => (
                 <div
                   key={item.title}
                   style={{
@@ -656,8 +802,7 @@ export default function HomePage() {
                 fontWeight: 600,
               }}
             >
-              No previous SUP or yoga experience required! Just bring your energy
-              and a desire to try something amazing. 🏄‍♂️☀️
+              {y.noExperience}
             </p>
 
             <p
@@ -669,7 +814,7 @@ export default function HomePage() {
                 fontWeight: 600,
               }}
             >
-              🚀 Spaces are limited to ensure everyone gets personal attention.
+              {y.limited}
             </p>
 
             <a
