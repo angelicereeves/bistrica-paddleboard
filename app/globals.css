@@ -439,4 +439,24 @@ footer {
     width: 24px;
     height: 24px;
   }
+
+  .yoga-content {
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .yoga-content {
+    text-align: center;
+  }
+
+  .yoga-content ul {
+    list-style-position: inside;
+    padding-left: 0;
+  }
+
+  .yoga-content .btn {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 }
