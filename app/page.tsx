@@ -42,6 +42,19 @@ const text = {
     mostPopular: "Most Popular",
     call: "Call",
     quickTips: ["Keep your core tight", "Look ahead", "Enjoy the ride"],
+    yoga: "SUP Yoga",
+    yogaTitle: "Find Your Balance on the Water",
+    yogaDesc:
+      "Discover the perfect balance of strength, mindfulness, and nature with our beginner-friendly SUP Yoga Class. Disconnect from routine, connect with the water, and enjoy a calming experience in Sarandë.",
+    yogaBook: "Reserve Your Spot",
+    yogaList: [
+      "Safety briefing before entering the water",
+      "Centering, breathing, and mindfulness",
+      "Gentle warm-up on the board",
+      "Fun balance-focused yoga flow",
+      "Floating Savasana relaxation",
+      "No previous SUP or yoga experience required",
+    ],
   },
   sq: {
     title: "Bistrica Paddle",
@@ -71,6 +84,19 @@ const text = {
     mostPopular: "Më i Preferuari",
     call: "Telefono",
     quickTips: ["Mbaj trupin stabil", "Shiko përpara", "Shijo udhëtimin"],
+    yoga: "SUP Yoga",
+    yogaTitle: "Gjej Balancën Mbi Ujë",
+    yogaDesc:
+      "Zbuloni balancën perfekte mes forcës, qetësisë dhe natyrës me klasën tonë SUP Yoga për fillestarë. Largohuni nga rutina, lidheni me ujin dhe shijoni një eksperiencë relaksuese në Sarandë.",
+    yogaBook: "Rezervo Vendin Tënd",
+    yogaList: [
+      "Udhëzime sigurie para hyrjes në ujë",
+      "Frymëmarrje dhe qetësim",
+      "Ngrohje e lehtë mbi bord",
+      "Pozicione argëtuese për balancë",
+      "Relaksim Floating Savasana",
+      "Nuk kërkohet eksperiencë në SUP ose yoga",
+    ],
   },
   fr: {
     title: "Bistrica Paddle",
@@ -104,6 +130,19 @@ const text = {
       "Regardez devant vous",
       "Profitez de la balade",
     ],
+    yoga: "SUP Yoga",
+    yogaTitle: "Trouvez Votre Équilibre sur l’Eau",
+    yogaDesc:
+      "Découvrez l’équilibre parfait entre force, pleine conscience et nature avec notre cours de SUP Yoga adapté aux débutants. Déconnectez de la routine, connectez-vous à l’eau et profitez d’une expérience apaisante à Sarandë.",
+    yogaBook: "Réserver Votre Place",
+    yogaList: [
+      "Briefing sécurité avant d’entrer dans l’eau",
+      "Respiration et pleine conscience",
+      "Échauffement doux sur la planche",
+      "Flow amusant axé sur l’équilibre",
+      "Relaxation Floating Savasana",
+      "Aucune expérience SUP ou yoga requise",
+    ],
   },
   it: {
     title: "Bistrica Paddle",
@@ -133,6 +172,19 @@ const text = {
     mostPopular: "Più Popolare",
     call: "Chiama",
     quickTips: ["Mantieni il core stabile", "Guarda avanti", "Goditi il giro"],
+    yoga: "SUP Yoga",
+    yogaTitle: "Trova il Tuo Equilibrio sull’Acqua",
+    yogaDesc:
+      "Scopri il perfetto equilibrio tra forza, consapevolezza e natura con la nostra lezione di SUP Yoga adatta ai principianti. Stacca dalla routine, connettiti con l’acqua e goditi un’esperienza rilassante a Sarandë.",
+    yogaBook: "Prenota il Tuo Posto",
+    yogaList: [
+      "Briefing di sicurezza prima di entrare in acqua",
+      "Respirazione e mindfulness",
+      "Riscaldamento dolce sulla tavola",
+      "Flow divertente incentrato sull’equilibrio",
+      "Relax Floating Savasana",
+      "Non serve esperienza SUP o yoga",
+    ],
   },
   es: {
     title: "Bistrica Paddle",
@@ -165,6 +217,19 @@ const text = {
       "Mantén el abdomen firme",
       "Mira hacia adelante",
       "Disfruta el paseo",
+    ],
+    yoga: "SUP Yoga",
+    yogaTitle: "Encuentra Tu Equilibrio en el Agua",
+    yogaDesc:
+      "Descubre el equilibrio perfecto entre fuerza, mindfulness y naturaleza con nuestra clase de SUP Yoga para principiantes. Desconecta de la rutina, conecta con el agua y disfruta una experiencia relajante en Sarandë.",
+    yogaBook: "Reserva Tu Lugar",
+    yogaList: [
+      "Instrucciones de seguridad antes de entrar al agua",
+      "Respiración y mindfulness",
+      "Calentamiento suave sobre la tabla",
+      "Flow divertido enfocado en el equilibrio",
+      "Relajación Floating Savasana",
+      "No se requiere experiencia en SUP ni yoga",
     ],
   },
 };
@@ -415,10 +480,144 @@ export default function HomePage() {
             <strong>18€</strong>
           </div>
 
+          <div className="price-card">
+            <span>🧘 SUP Yoga</span>
+            <strong>20€</strong>
+          </div>
+
           <div className="price-card popular">
             <small>{t.mostPopular}</small>
             <span>🌅 Sunset Paddle</span>
             <strong>15€</strong>
+          </div>
+        </div>
+      </section>
+
+
+
+      <section
+        style={{
+          padding: "5rem 1.5rem",
+          background: "linear-gradient(135deg, #f7fcff 0%, #e8f7fb 100%)",
+        }}
+      >
+        <div
+          style={{
+            maxWidth: "1200px",
+            margin: "0 auto",
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+            gap: "2.5rem",
+            alignItems: "center",
+          }}
+        >
+          <div>
+            <div
+              style={{
+                display: "inline-block",
+                marginBottom: "1rem",
+                padding: "0.5rem 1rem",
+                borderRadius: "999px",
+                background: "rgba(10, 93, 120, 0.1)",
+                color: "#0a5d78",
+                fontWeight: 700,
+              }}
+            >
+              🌊 BEGINNER FRIENDLY
+            </div>
+
+            <h2
+              style={{
+                fontSize: "2.5rem",
+                color: "#0a5d78",
+                marginBottom: "1rem",
+              }}
+            >
+              🧘 {t.yoga}
+            </h2>
+
+                  <div
+        style={{
+          display: "inline-block",
+          background: "#0a5d78",
+          color: "white",
+          padding: "0.5rem 1rem",
+          borderRadius: "999px",
+          fontWeight: 700,
+          marginBottom: "1.5rem",
+        }}
+      >
+        🧘 SUP Yoga • 20€ per person
+      </div>
+
+<h3
+              style={{
+                fontSize: "1.5rem",
+                marginBottom: "1rem",
+                color: "#143642",
+              }}
+            >
+              {t.yogaTitle}
+            </h3>
+
+            <p
+              style={{
+                lineHeight: 1.8,
+                marginBottom: "1.5rem",
+                color: "#284b57",
+                fontSize: "1.05rem",
+              }}
+            >
+              {t.yogaDesc}
+            </p>
+
+            <div
+              style={{
+                display: "grid",
+                gap: "0.75rem",
+                marginBottom: "2rem",
+              }}
+            >
+              {t.yogaList.map((item) => (
+                <p
+                  key={item}
+                  style={{
+                    margin: 0,
+                    padding: "0.85rem 1rem",
+                    borderRadius: "14px",
+                    background: "rgba(255,255,255,0.8)",
+                    boxShadow: "0 6px 18px rgba(0,0,0,0.06)",
+                  }}
+                >
+                  ✓ {item}
+                </p>
+              ))}
+            </div>
+
+            <a
+              href={whatsapp}
+              target="_blank"
+              className="btn primary"
+              style={{ display: "inline-block" }}
+            >
+              💬 {t.yogaBook}
+            </a>
+          </div>
+
+          <div>
+            <Image
+              src="/yoga1.jpg"
+              alt="SUP Yoga class on paddle boards in Sarandë"
+              width={900}
+              height={1200}
+              style={{
+                width: "100%",
+                height: "auto",
+                borderRadius: "26px",
+                boxShadow: "0 14px 40px rgba(0,0,0,0.22)",
+                border: "4px solid white",
+              }}
+            />
           </div>
         </div>
       </section>
