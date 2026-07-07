@@ -21,8 +21,8 @@ const languages: { code: Lang; label: string; flag: string }[] = [
 const text = {
   en: {
     title: "Bistrica Paddle",
-    subtitle: "Paddle board rentals in Sarandë",
-    desc: "Explore Sarandë from a new perspective. Find us on the beach in front of Restaurant Centrali.",
+    subtitle: "Paddleboard Rentals & SUP Experiences in Sarandë",
+    desc: "Discover the beautiful coastline of Sarandë from the water. Find us on the beach in front of Restaurant Centrali.",
     book: "Book on WhatsApp",
     map: "Open in Google Maps",
     prices: "Prices",
@@ -44,10 +44,34 @@ const text = {
     call: "Call",
     quickTips: ["Keep your core tight", "Look ahead", "Enjoy the ride"],
     chooseExperience: "Choose Your SUP Experience",
-    chooseSub: "Rent a board, join a yoga session, train your technique, or compete with friends.",
-    reserve: "Reserve Your Spot",
-    bookTraining: "Book Training",
-    bookTeam: "Book Your Team",
+    chooseSub: "Choose your perfect SUP experience—rent a paddleboard, enjoy SUP Yoga, improve your technique, or compete with friends.",
+    reserve: "Reserve Your Yoga Spot",
+    bookTraining: "Book a Training Session",
+    bookTeam: "Register Your Team",
+    viewDetails: "View Details",
+    hideDetails: "Hide Details",
+    meetingPoint: "Meeting Point",
+    meetingPointDesc: "Meet at our Yoga Dock relay station before the event begins.",
+    boardsIncluded: "Boards Included",
+    boardsIncludedDesc:
+      "Premium boards are provided for every team, including ST, Monster, Vapor, Fusion, RF Blue, and Magma.",
+    dynamics: "Dynamics",
+    winningCondition: "Winning Condition",
+    goldenRule: "Golden Rule",
+    oneHour: "1 Hour",
+    supYoga: "SUP Yoga",
+    trainingSession: "Training Session",
+    trainingMembership: "Training Membership",
+    sessions8: "8 sessions",
+    teamChallenge: "Team Challenge",
+    perTeam: "per team",
+    sunsetPaddle: "Sunset Paddle",
+    gameTitles: [
+      "🛶 Game 1: The Yoga Dock Rescue",
+      "🎿 Game 2: The Human Ski",
+      "🤼 Game 3: Board Gladiator",
+      "🎈 Game 4: Color Hunt",
+    ],
   },
   sq: {
     title: "Bistrica Paddle",
@@ -82,6 +106,30 @@ const text = {
     reserve: "Rezervo Vendin",
     bookTraining: "Rezervo Trajnimin",
     bookTeam: "Rezervo Ekipin",
+    viewDetails: "Shiko Detajet",
+    hideDetails: "Fshih Detajet",
+    meetingPoint: "Pika e Takimit",
+    meetingPointDesc: "Takimi bëhet te stacioni ynë Yoga Dock para fillimit të eventit.",
+    boardsIncluded: "Bordet Përfshihen",
+    boardsIncludedDesc:
+      "Bordet premium ofrohen për çdo ekip, duke përfshirë ST, Monster, Vapor, Fusion, RF Blue dhe Magma.",
+    dynamics: "Dinamika",
+    winningCondition: "Kushti i Fitores",
+    goldenRule: "Rregulli i Artë",
+    oneHour: "1 Orë",
+    supYoga: "SUP Yoga",
+    trainingSession: "Seancë Trajnimi",
+    trainingMembership: "Abonim Trajnimi",
+    sessions8: "8 seanca",
+    teamChallenge: "Sfida me Ekipe",
+    perTeam: "për ekip",
+    sunsetPaddle: "Sunset Paddle",
+    gameTitles: [
+      "🛶 Loja 1: Shpëtimi te Yoga Dock",
+      "🎿 Loja 2: Ski Njerëzor",
+      "🤼 Loja 3: Gladiatori mbi Bord",
+      "🎈 Loja 4: Gjuetia e Ngjyrave",
+    ],
   },
   fr: {
     title: "Bistrica Paddle",
@@ -120,6 +168,30 @@ const text = {
     reserve: "Réserver Votre Place",
     bookTraining: "Réserver l’Entraînement",
     bookTeam: "Réserver Votre Équipe",
+    viewDetails: "Voir les Détails",
+    hideDetails: "Masquer les Détails",
+    meetingPoint: "Point de Rendez-vous",
+    meetingPointDesc: "Rendez-vous à notre station relais Yoga Dock avant le début de l’événement.",
+    boardsIncluded: "Planches Incluses",
+    boardsIncludedDesc:
+      "Des planches premium sont fournies pour chaque équipe, notamment ST, Monster, Vapor, Fusion, RF Blue et Magma.",
+    dynamics: "Déroulement",
+    winningCondition: "Condition de Victoire",
+    goldenRule: "Règle d’Or",
+    oneHour: "1 Heure",
+    supYoga: "SUP Yoga",
+    trainingSession: "Séance d’Entraînement",
+    trainingMembership: "Abonnement Entraînement",
+    sessions8: "8 séances",
+    teamChallenge: "Défi en Équipe",
+    perTeam: "par équipe",
+    sunsetPaddle: "Sunset Paddle",
+    gameTitles: [
+      "🛶 Jeu 1 : Le Sauvetage du Yoga Dock",
+      "🎿 Jeu 2 : Le Ski Humain",
+      "🤼 Jeu 3 : Gladiateur sur Planche",
+      "🎈 Jeu 4 : Chasse aux Couleurs",
+    ],
   },
   it: {
     title: "Bistrica Paddle",
@@ -154,6 +226,30 @@ const text = {
     reserve: "Prenota il Tuo Posto",
     bookTraining: "Prenota l’Allenamento",
     bookTeam: "Prenota la Tua Squadra",
+    viewDetails: "Vedi Dettagli",
+    hideDetails: "Nascondi Dettagli",
+    meetingPoint: "Punto d’Incontro",
+    meetingPointDesc: "Ci incontriamo alla nostra stazione Yoga Dock prima dell’inizio dell’evento.",
+    boardsIncluded: "Tavole Incluse",
+    boardsIncludedDesc:
+      "Tavole premium fornite per ogni squadra, incluse ST, Monster, Vapor, Fusion, RF Blue e Magma.",
+    dynamics: "Dinamica",
+    winningCondition: "Condizione di Vittoria",
+    goldenRule: "Regola d’Oro",
+    oneHour: "1 Ora",
+    supYoga: "SUP Yoga",
+    trainingSession: "Sessione di Allenamento",
+    trainingMembership: "Abbonamento Allenamento",
+    sessions8: "8 sessioni",
+    teamChallenge: "Sfida a Squadre",
+    perTeam: "per squadra",
+    sunsetPaddle: "Sunset Paddle",
+    gameTitles: [
+      "🛶 Gioco 1: Il Salvataggio al Yoga Dock",
+      "🎿 Gioco 2: Lo Sci Umano",
+      "🤼 Gioco 3: Gladiatore sulla Tavola",
+      "🎈 Gioco 4: Caccia ai Colori",
+    ],
   },
   es: {
     title: "Bistrica Paddle",
@@ -192,6 +288,30 @@ const text = {
     reserve: "Reserva Tu Lugar",
     bookTraining: "Reservar Entrenamiento",
     bookTeam: "Reservar Tu Equipo",
+    viewDetails: "Ver Detalles",
+    hideDetails: "Ocultar Detalles",
+    meetingPoint: "Punto de Encuentro",
+    meetingPointDesc: "Nos reunimos en nuestra estación Yoga Dock antes de comenzar el evento.",
+    boardsIncluded: "Tablas Incluidas",
+    boardsIncludedDesc:
+      "Se proporcionan tablas premium para cada equipo, incluidas ST, Monster, Vapor, Fusion, RF Blue y Magma.",
+    dynamics: "Dinámica",
+    winningCondition: "Condición de Victoria",
+    goldenRule: "Regla de Oro",
+    oneHour: "1 Hora",
+    supYoga: "SUP Yoga",
+    trainingSession: "Sesión de Entrenamiento",
+    trainingMembership: "Membresía de Entrenamiento",
+    sessions8: "8 sesiones",
+    teamChallenge: "Reto por Equipos",
+    perTeam: "por equipo",
+    sunsetPaddle: "Sunset Paddle",
+    gameTitles: [
+      "🛶 Juego 1: El Rescate del Yoga Dock",
+      "🎿 Juego 2: El Esquí Humano",
+      "🤼 Juego 3: Gladiador sobre la Tabla",
+      "🎈 Juego 4: Búsqueda de Colores",
+    ],
   },
 };
 
@@ -227,19 +347,19 @@ const experiences: Record<
   rentals: {
     en: {
       label: "🏄 Paddleboard Rentals",
-      heading: "🏄 Explore Sarandë by Paddleboard",
-      price: "10€ for 1 hour • 15€ sunset paddle",
+      heading: "🏄 Explore the Coast of Sarandë by Paddleboard",
+      price: "10€ / Hour • 15€ Sunset Paddle",
       image: "/paddlerentals.png",
       imageAlt: "Paddleboard rental information in Sarandë",
       intro:
         "Rent a paddleboard and enjoy the coastline of Sarandë from the water. Perfect for beginners, couples, families, and friends.",
-      together: "Rental highlights:",
+      together: "Your Rental Includes",
       items: [
         { title: "🏄 1 Hour Rental", desc: "A quick and fun paddle close to the shore." },
         { title: "🌅 Sunset Paddle", desc: "A beautiful evening session during the best light of the day." },
         { title: "📸 Free Photos", desc: "Capture your experience on the water." },
-        { title: "🦺 Safety Included", desc: "Life jackets and basic guidance are provided." },
-        { title: "✨ Beginner Friendly", desc: "Easy, fun, and welcoming for all levels." },
+        { title: "🦺 Safety Included", desc: "Life jackets, a safety briefing, and basic paddling guidance are included." },
+        { title: "✨ Beginner Friendly", desc: "Perfect for beginners, yet fun for every skill level." },
       ],
       note: "Find us on the beach in front of Restaurant Centrali.",
       limited: "Stay in the safe area, respect the sea, and wear your life jacket.",
@@ -341,7 +461,7 @@ const experiences: Record<
         { title: "🌬️ Centering & Breathing", desc: "Mindful breathing to connect with the movement of the water." },
         { title: "🧘 Gentle Warm-up", desc: "Low-to-the-board poses to adapt to the board’s stability." },
         { title: "🔥 Active Flow", desc: "Fun, balance-focused poses to challenge and empower you." },
-        { title: "🌌 Floating Savasana", desc: "Relax on your board, listen to the water, and drift into calm." },
+        { title: "🌌 Floating Savasana & Relaxation", desc: "Relax on your board, listen to the water, and drift into calm." },
       ],
       note: "No previous SUP or yoga experience required.",
       limited: "Spaces are limited to ensure everyone gets personal attention.",
@@ -436,7 +556,7 @@ const experiences: Record<
       image: "/paddletraining.jpeg",
       imageAlt: "SUP training club in Sarandë",
       intro:
-        "Already know how to paddle? Train, level up your technique, and get an amazing morning workout on the water.",
+        "Already comfortable on a paddleboard? Take your skills to the next level with our coached morning training sessions.",
       together: "What we do:",
       items: [
         { title: "🗓️ Mondays & Thursdays", desc: "7:30 AM, the perfect time for glassy water and no crowd." },
@@ -447,7 +567,7 @@ const experiences: Record<
         { title: "🧘 Board Stretching", desc: "Finish with stretching and recovery on the water." },
       ],
       note: "Requirement: you must be able to stand up easily and maintain a straight course.",
-      limited: "Spots are limited. Leash and PFD are required.",
+      limited: "Limited group sizes ensure personalized coaching. Leash and PFD are required.",
       buttonType: "training",
     },
     sq: {
@@ -543,8 +663,8 @@ const experiences: Record<
       image: "/paddleinfo.png",
       imageAlt: "SUP team challenge games in Sarandë",
       intro:
-        "Gather your team and give it your all. Strategy, balance, teamwork, and pure fun are guaranteed.",
-      together: "The 4 epic games:",
+        "Gather your team of three and take on four exciting SUP challenges that test teamwork, balance, strategy, and speed.",
+      together: "The Four Challenge Events",
       items: [
         { title: "🛶 The Rescue", desc: "A high-stakes progressive relay race." },
         { title: "🎿 The Human Ski", desc: "Two people stand across two parallel boards and move together." },
@@ -553,8 +673,8 @@ const experiences: Record<
         { title: "📍 Yoga Dock Station", desc: "The challenge takes place right at our yoga dock relay station." },
         { title: "🏄 Boards Provided", desc: "Premium boards included: ST, Monster, Vapor, Fusion, and Magma." },
       ],
-      note: "Registration is only 15€ per team, just 5€ per person.",
-      limited: "Spots are strictly limited for logistics and safety.",
+      note: "Entry Fee: 15€ per team (only 5€ per person).",
+      limited: "Spaces are limited to ensure a safe and enjoyable event for every team.",
       rules: [
         {
           title: "🛶 The Rescue Rules",
@@ -573,7 +693,7 @@ const experiences: Record<
           desc: "Two team members ride one board and collect floating objects of their assigned color. One person steers while standing, and the other kneels at the front to collect. The first team to return to shore with all objects of their color wins. Wrong colors must be returned exactly where they were found.",
         },
       ],
-gameDetails: [
+      gameDetails: [
         {
           title: "🛶 Game 1: The Yoga Dock Rescue",
           boards: "Boards: ST and Monster",
@@ -680,7 +800,7 @@ gameDetails: [
           desc: "Dy anëtarë të ekipit përdorin një bord dhe mbledhin objektet lundruese me ngjyrën e tyre. Njëri drejton në këmbë dhe tjetri qëndron në gjunjë përpara për të mbledhur objektet. Fiton ekipi që kthehet i pari në breg me të gjitha objektet e ngjyrës së vet. Ngjyrat e gabuara duhet të kthehen aty ku u gjetën.",
         },
       ],
-gameDetails: [
+      gameDetails: [
         {
           title: "🛶 Loja 1: The Yoga Dock Rescue",
           boards: "Borde: ST dhe Monster",
@@ -787,7 +907,7 @@ gameDetails: [
           desc: "Deux membres utilisent une planche et ramassent les objets flottants de leur couleur. Une personne dirige debout, l’autre reste à genoux à l’avant pour collecter. La première équipe qui revient au rivage avec tous ses objets gagne. Les mauvaises couleurs doivent être remises exactement où elles ont été trouvées.",
         },
       ],
-gameDetails: [
+      gameDetails: [
         {
           title: "🛶 Jeu 1 : The Yoga Dock Rescue",
           boards: "Planches : ST et Monster",
@@ -894,7 +1014,7 @@ gameDetails: [
           desc: "Due membri usano una tavola e raccolgono gli oggetti galleggianti del proprio colore. Una persona guida in piedi, l’altra sta in ginocchio davanti per raccogliere. Vince la prima squadra che torna a riva con tutti gli oggetti del proprio colore. I colori sbagliati devono essere rimessi esattamente dove sono stati trovati.",
         },
       ],
-gameDetails: [
+      gameDetails: [
         {
           title: "🛶 Gioco 1: The Yoga Dock Rescue",
           boards: "Tavole: ST e Monster",
@@ -1001,7 +1121,7 @@ gameDetails: [
           desc: "Dos miembros usan una tabla y recogen objetos flotantes de su color asignado. Una persona dirige de pie y la otra va de rodillas al frente para recoger. Gana el primer equipo que vuelve a la orilla con todos los objetos de su color. Los colores equivocados deben devolverse exactamente donde se encontraron.",
         },
       ],
-gameDetails: [
+      gameDetails: [
         {
           title: "🛶 Juego 1: The Yoga Dock Rescue",
           boards: "Tablas: ST y Monster",
@@ -1181,8 +1301,10 @@ const strokes = [
 
 function GameDetailCards({
   games,
+  t,
 }: {
   games: NonNullable<(typeof experiences)["games"][Lang]["gameDetails"]>;
+  t: (typeof text)[Lang];
 }) {
   return (
     <div
@@ -1240,7 +1362,7 @@ function GameDetailCards({
               background: theme.bg,
             }}
           >
-            {game.title}
+            {t.gameTitles?.[index] ?? game.title}
           </summary>
 
           <div
@@ -1283,7 +1405,7 @@ function GameDetailCards({
                 letterSpacing: "0.04em",
               }}
             >
-              Dynamics
+              {t.dynamics}
             </h4>
 
             <ol
@@ -1315,7 +1437,7 @@ function GameDetailCards({
                 }}
               >
                 <strong style={{ color: "#0a5d78" }}>
-                  Winning Condition
+                  {t.winningCondition}
                 </strong>
                 <p style={{ margin: "0.35rem 0 0", lineHeight: 1.65 }}>
                   {game.winning}
@@ -1330,7 +1452,7 @@ function GameDetailCards({
                   borderLeft: "4px solid #f59e0b",
                 }}
               >
-                <strong style={{ color: "#a16207" }}>⭐ Golden Rule</strong>
+                <strong style={{ color: "#a16207" }}>⭐ {t.goldenRule}</strong>
                 <p style={{ margin: "0.35rem 0 0", lineHeight: 1.65 }}>
                   {game.goldenRule}
                 </p>
@@ -1350,12 +1472,14 @@ function ActivityCard({
   isOpen,
   onToggle,
   buttonText,
+  t,
 }: {
   sectionKey: SectionKey;
   experience: (typeof experiences)[SectionKey][Lang];
   isOpen: boolean;
   onToggle: (key: SectionKey) => void;
   buttonText: string;
+  t: (typeof text)[Lang];
 }) {
   return (
     <article
@@ -1509,7 +1633,7 @@ function ActivityCard({
                 marginTop: "0.25rem",
               }}
             >
-              {isOpen ? "Hide Details" : "View Details"}
+              {isOpen ? t.hideDetails : t.viewDetails}
             </div>
           </div>
         </div>
@@ -1569,10 +1693,10 @@ function ActivityCard({
                   }}
                 >
                   <strong style={{ color: "#0a5d78", display: "block", marginBottom: "0.35rem" }}>
-                    📍 Meeting Point
+                    📍 {t.meetingPoint}
                   </strong>
                   <span style={{ color: "#284b57", lineHeight: 1.6 }}>
-                    Meet at our Yoga Dock relay station before the event begins.
+                    {t.meetingPointDesc}
                   </span>
                 </div>
 
@@ -1585,17 +1709,17 @@ function ActivityCard({
                   }}
                 >
                   <strong style={{ color: "#0a5d78", display: "block", marginBottom: "0.35rem" }}>
-                    🏄 Boards Included
+                    🏄 {t.boardsIncluded}
                   </strong>
                   <span style={{ color: "#284b57", lineHeight: 1.6 }}>
-                    Premium boards are provided for every team, including ST, Monster, Vapor, Fusion, RF Blue, and Magma.
+                    {t.boardsIncludedDesc}
                   </span>
                 </div>
               </div>
             )}
 
             {experience.gameDetails ? (
-              <GameDetailCards games={experience.gameDetails} />
+              <GameDetailCards games={experience.gameDetails} t={t} />
             ) : (
               <div
                 style={{
@@ -1611,7 +1735,7 @@ function ActivityCard({
                     style={{
                       padding: "0.9rem 1rem",
                       borderRadius: "16px",
-                      background: theme.panel,
+                      background: "#eef9fc",
                       boxShadow: "0 5px 14px rgba(0,0,0,0.05)",
                       border: "1px solid rgba(10,93,120,0.08)",
                     }}
@@ -1798,35 +1922,35 @@ export default function HomePage() {
 
         <div className="price-grid">
           <div className="price-card">
-            <span>🏄‍♂️ 1 Hour</span>
+            <span>🏄‍♂️ {t.oneHour}</span>
             <strong>10€</strong>
           </div>
 
           <div className="price-card">
-            <span>🧘 SUP Yoga</span>
+            <span>🧘 {t.supYoga}</span>
             <strong>20€</strong>
           </div>
 
           <div className="price-card">
-            <span>🏋️ Training Session</span>
+            <span>🏋️ {t.trainingSession}</span>
             <strong>25€</strong>
           </div>
 
           <div className="price-card">
-            <span>🎫 Training Membership</span>
+            <span>🎫 {t.trainingMembership}</span>
             <strong>160€</strong>
-            <small style={{ color: "#284b57", fontWeight: 800 }}>8 sessions</small>
+            <small style={{ color: "#284b57", fontWeight: 800 }}>{t.sessions8}</small>
           </div>
 
           <div className="price-card">
-            <span>🏆 Team Challenge</span>
+            <span>🏆 {t.teamChallenge}</span>
             <strong>15€</strong>
-            <small style={{ color: "#284b57", fontWeight: 800 }}>per team</small>
+            <small style={{ color: "#284b57", fontWeight: 800 }}>{t.perTeam}</small>
           </div>
 
           <div className="price-card popular">
             <small>{t.mostPopular}</small>
-            <span>🌅 Sunset Paddle</span>
+            <span>🌅 {t.sunsetPaddle}</span>
             <strong>15€</strong>
           </div>
         </div>
@@ -1872,6 +1996,7 @@ export default function HomePage() {
                   isOpen={openSection === section}
                   onToggle={toggleSection}
                   buttonText={getButtonText(section)}
+                  t={t}
                 />
               )
             )}
