@@ -1193,12 +1193,37 @@ function GameDetailCards({
         textAlign: "left",
       }}
     >
-      {games.map((game) => (
+      {games.map((game, index) => {
+        const themes = [
+          {
+            border: "#0ea5e9",
+            bg: "linear-gradient(135deg,#eff9ff 0%,#dff4ff 100%)",
+            panel: "#eef9ff",
+          },
+          {
+            border: "#22c55e",
+            bg: "linear-gradient(135deg,#f3fff7 0%,#e4faec 100%)",
+            panel: "#f2fff6",
+          },
+          {
+            border: "#f97316",
+            bg: "linear-gradient(135deg,#fff8f2 0%,#ffeddc 100%)",
+            panel: "#fff7ef",
+          },
+          {
+            border: "#eab308",
+            bg: "linear-gradient(135deg,#fffdf0 0%,#fff8d7 100%)",
+            panel: "#fffdf2",
+          },
+        ];
+        const theme = themes[index % themes.length];
+
+        return (
         <details
           key={game.title}
           style={{
             background: "#ffffff",
-            border: "1px solid rgba(10,93,120,0.14)",
+            border: `2px solid ${theme.border}`,
             borderRadius: "18px",
             boxShadow: "0 6px 16px rgba(0,0,0,0.06)",
             overflow: "hidden",
@@ -1208,11 +1233,11 @@ function GameDetailCards({
             style={{
               cursor: "pointer",
               padding: "1rem 1.1rem",
-              color: "#0a5d78",
+              color: theme.border,
               fontWeight: 900,
               fontSize: "1.05rem",
               lineHeight: 1.4,
-              background: "linear-gradient(135deg, #ffffff 0%, #f0fbff 100%)",
+              background: theme.bg,
             }}
           >
             {game.title}
@@ -1238,7 +1263,7 @@ function GameDetailCards({
                   style={{
                     margin: 0,
                     lineHeight: 1.65,
-                    background: "#f7fcff",
+                    background: theme.panel,
                     borderRadius: "12px",
                     padding: "0.75rem 0.85rem",
                     border: "1px solid rgba(10,93,120,0.08)",
@@ -1313,7 +1338,8 @@ function GameDetailCards({
             </div>
           </div>
         </details>
-      ))}
+        );
+      })}
     </div>
   );
 }
@@ -1585,7 +1611,7 @@ function ActivityCard({
                     style={{
                       padding: "0.9rem 1rem",
                       borderRadius: "16px",
-                      background: "#f7fcff",
+                      background: theme.panel,
                       boxShadow: "0 5px 14px rgba(0,0,0,0.05)",
                       border: "1px solid rgba(10,93,120,0.08)",
                     }}
