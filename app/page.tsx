@@ -1791,6 +1791,25 @@ function ActivityCard({
             >
               💬 {buttonText}
             </a>
+
+            <button
+              onClick={() => onToggle(sectionKey)}
+              type="button"
+              style={{
+                display: "block",
+                margin: "1.2rem auto 0",
+                border: "none",
+                background: "transparent",
+                color: "#0a5d78",
+                fontWeight: 900,
+                fontSize: "0.98rem",
+                cursor: "pointer",
+                padding: "0.55rem 0.85rem",
+              }}
+              aria-label={t.hideDetails}
+            >
+              ▲ {t.hideDetails}
+            </button>
           </div>
         </div>
       )}
