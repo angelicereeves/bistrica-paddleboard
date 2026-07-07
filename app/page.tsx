@@ -211,6 +211,7 @@ const experiences: Record<
       note: string;
       limited: string;
       buttonType: "book" | "reserve" | "training" | "team";
+      rules?: { title: string; desc: string }[];
     }
   >
 > = {
@@ -218,15 +219,14 @@ const experiences: Record<
     en: {
       label: "🏄 Paddleboard Rentals",
       heading: "🏄 Explore Sarandë by Paddleboard",
-      price: "10€ for 1 hour • 18€ for 2 hours • 15€ sunset paddle",
-      image: "/paddleinfo.png",
+      price: "10€ for 1 hour • 15€ sunset paddle",
+      image: "/paddlerentals.png",
       imageAlt: "Paddleboard rental information in Sarandë",
       intro:
         "Rent a paddleboard and enjoy the coastline of Sarandë from the water. Perfect for beginners, couples, families, and friends.",
       together: "Rental highlights:",
       items: [
         { title: "🏄 1 Hour Rental", desc: "A quick and fun paddle close to the shore." },
-        { title: "🌊 2 Hour Rental", desc: "More time to explore, relax, and enjoy the sea." },
         { title: "🌅 Sunset Paddle", desc: "A beautiful evening session during the best light of the day." },
         { title: "📸 Free Photos", desc: "Capture your experience on the water." },
         { title: "🦺 Safety Included", desc: "Life jackets and basic guidance are provided." },
@@ -239,15 +239,14 @@ const experiences: Record<
     sq: {
       label: "🏄 Qira Paddleboard",
       heading: "🏄 Eksploro Sarandën me Paddleboard",
-      price: "10€ për 1 orë • 18€ për 2 orë • 15€ sunset paddle",
-      image: "/paddleinfo.png",
+      price: "10€ për 1 orë • 15€ sunset paddle",
+      image: "/paddlerentals.png",
       imageAlt: "Informacion për qira paddleboard në Sarandë",
       intro:
         "Merr një paddleboard me qira dhe shijo bregdetin e Sarandës nga uji. Perfekte për fillestarë, çifte, familje dhe miq.",
       together: "Përfshirë në qira:",
       items: [
         { title: "🏄 Qira 1 Orë", desc: "Një xhiro e shpejtë dhe argëtuese pranë bregut." },
-        { title: "🌊 Qira 2 Orë", desc: "Më shumë kohë për të eksploruar dhe shijuar detin." },
         { title: "🌅 Sunset Paddle", desc: "Një seancë e bukur në mbrëmje me dritën më të mirë." },
         { title: "📸 Foto Falas", desc: "Kujtime nga eksperienca jote mbi ujë." },
         { title: "🦺 Siguria Përfshihet", desc: "Jelekë shpëtimi dhe udhëzime bazë të përfshira." },
@@ -260,15 +259,14 @@ const experiences: Record<
     fr: {
       label: "🏄 Location Paddleboard",
       heading: "🏄 Explorez Sarandë en Paddleboard",
-      price: "10€ pour 1 heure • 18€ pour 2 heures • 15€ sunset paddle",
-      image: "/paddleinfo.png",
+      price: "10€ pour 1 heure • 15€ sunset paddle",
+      image: "/paddlerentals.png",
       imageAlt: "Informations de location de paddleboard à Sarandë",
       intro:
         "Louez une planche et profitez de la côte de Sarandë depuis l’eau. Parfait pour les débutants, couples, familles et amis.",
       together: "Points forts :",
       items: [
         { title: "🏄 Location 1 Heure", desc: "Une sortie rapide et amusante près du rivage." },
-        { title: "🌊 Location 2 Heures", desc: "Plus de temps pour explorer, se détendre et profiter de la mer." },
         { title: "🌅 Sunset Paddle", desc: "Une belle session du soir avec la meilleure lumière." },
         { title: "📸 Photos Gratuites", desc: "Gardez un souvenir de votre expérience sur l’eau." },
         { title: "🦺 Sécurité Incluse", desc: "Gilets de sauvetage et conseils de base fournis." },
@@ -281,15 +279,14 @@ const experiences: Record<
     it: {
       label: "🏄 Noleggio Paddleboard",
       heading: "🏄 Scopri Sarandë in Paddleboard",
-      price: "10€ per 1 ora • 18€ per 2 ore • 15€ sunset paddle",
-      image: "/paddleinfo.png",
+      price: "10€ per 1 ora • 15€ sunset paddle",
+      image: "/paddlerentals.png",
       imageAlt: "Informazioni noleggio paddleboard a Sarandë",
       intro:
         "Noleggia una tavola e goditi la costa di Sarandë dall’acqua. Perfetto per principianti, coppie, famiglie e amici.",
       together: "Dettagli noleggio:",
       items: [
         { title: "🏄 Noleggio 1 Ora", desc: "Un giro veloce e divertente vicino alla riva." },
-        { title: "🌊 Noleggio 2 Ore", desc: "Più tempo per esplorare, rilassarti e goderti il mare." },
         { title: "🌅 Sunset Paddle", desc: "Una bellissima sessione serale con la luce migliore." },
         { title: "📸 Foto Gratuite", desc: "Ricordi della tua esperienza sull’acqua." },
         { title: "🦺 Sicurezza Inclusa", desc: "Giubbotti salvagente e indicazioni base inclusi." },
@@ -302,15 +299,14 @@ const experiences: Record<
     es: {
       label: "🏄 Alquiler Paddleboard",
       heading: "🏄 Explora Sarandë en Paddleboard",
-      price: "10€ por 1 hora • 18€ por 2 horas • 15€ sunset paddle",
-      image: "/paddleinfo.png",
+      price: "10€ por 1 hora • 15€ sunset paddle",
+      image: "/paddlerentals.png",
       imageAlt: "Información de alquiler de paddleboard en Sarandë",
       intro:
         "Alquila una tabla y disfruta la costa de Sarandë desde el agua. Perfecto para principiantes, parejas, familias y amigos.",
       together: "Detalles del alquiler:",
       items: [
         { title: "🏄 Alquiler 1 Hora", desc: "Un paseo rápido y divertido cerca de la orilla." },
-        { title: "🌊 Alquiler 2 Horas", desc: "Más tiempo para explorar, relajarte y disfrutar el mar." },
         { title: "🌅 Sunset Paddle", desc: "Una hermosa sesión de tarde con la mejor luz." },
         { title: "📸 Fotos Gratis", desc: "Recuerdos de tu experiencia en el agua." },
         { title: "🦺 Seguridad Incluida", desc: "Chalecos salvavidas e instrucciones básicas incluidas." },
@@ -428,7 +424,7 @@ const experiences: Record<
       label: "🏋️ SUP Training Club",
       heading: "🏄‍♂️ Intermediate SUP Training Club",
       price: "25€ session • 160€ monthly membership",
-      image: "/paddleinfo.png",
+      image: "/paddletraining.jpeg",
       imageAlt: "SUP training club in Sarandë",
       intro:
         "Already know how to paddle? Train, level up your technique, and get an amazing morning workout on the water.",
@@ -449,7 +445,7 @@ const experiences: Record<
       label: "🏋️ SUP Training Club",
       heading: "🏄‍♂️ Klubi i Trajnimit SUP për Nivel Mesatar",
       price: "25€ seanca • 160€ abonimi mujor",
-      image: "/paddleinfo.png",
+      image: "/paddletraining.jpeg",
       imageAlt: "SUP training në Sarandë",
       intro:
         "Nëse di të bësh paddle dhe dëshiron të përmirësosh teknikën, kjo është për ty.",
@@ -470,7 +466,7 @@ const experiences: Record<
       label: "🏋️ Club d’Entraînement SUP",
       heading: "🏄‍♂️ Club d’Entraînement SUP Intermédiaire",
       price: "25€ la séance • 160€ abonnement mensuel",
-      image: "/paddleinfo.png",
+      image: "/paddletraining.jpeg",
       imageAlt: "Entraînement SUP à Sarandë",
       intro:
         "Vous savez déjà pagayer ? Améliorez votre technique avec un entraînement matinal sur l’eau.",
@@ -491,7 +487,7 @@ const experiences: Record<
       label: "🏋️ SUP Training Club",
       heading: "🏄‍♂️ Club di Allenamento SUP Intermedio",
       price: "25€ sessione • 160€ abbonamento mensile",
-      image: "/paddleinfo.png",
+      image: "/paddletraining.jpeg",
       imageAlt: "Allenamento SUP a Sarandë",
       intro:
         "Sai già pagaiare? Migliora la tecnica con un fantastico allenamento mattutino sull’acqua.",
@@ -512,7 +508,7 @@ const experiences: Record<
       label: "🏋️ SUP Training Club",
       heading: "🏄‍♂️ Club de Entrenamiento SUP Intermedio",
       price: "25€ sesión • 160€ membresía mensual",
-      image: "/paddleinfo.png",
+      image: "/paddletraining.jpeg",
       imageAlt: "Entrenamiento SUP en Sarandë",
       intro:
         "¿Ya sabes remar? Mejora tu técnica con un entrenamiento increíble por la mañana sobre el agua.",
@@ -550,6 +546,24 @@ const experiences: Record<
       ],
       note: "Registration is only 15€ per team, just 5€ per person.",
       limited: "Spots are strictly limited for logistics and safety.",
+      rules: [
+        {
+          title: "🛶 The Rescue Rules",
+          desc: "Two teams race at the same time. Participant 1 starts standing from the shoreline, paddles to the yoga dock, picks up Participant 2 seated or kneeling at the front, goes around the dock, returns to shore, picks up Participant 3, then all 3 paddle back to touch the yoga dock. Participant 1 must stay standing the entire time. If they fall, they must fully remount before continuing.",
+        },
+        {
+          title: "🎿 The Human Ski Rules",
+          desc: "Two participants use two boards in parallel. Each person places one foot on each board and they move together from the shoreline to the finish line. If someone falls or the boards separate too much, they must stop, realign the boards, climb back up, and continue from the same spot.",
+        },
+        {
+          title: "🤼 Board Gladiator Rules",
+          desc: "Two competitors stand face-to-face on one stable board near the yoga dock. They rock the board using their legs and balance to destabilize each other. The last person standing wins. Physical contact, pushing, paddle contact, or outside objects are not allowed.",
+        },
+        {
+          title: "🎈 Color Hunt Rules",
+          desc: "Two team members ride one board and collect floating objects of their assigned color. One person steers while standing, and the other kneels at the front to collect. The first team to return to shore with all objects of their color wins. Wrong colors must be returned exactly where they were found.",
+        },
+      ],
       buttonType: "team",
     },
     sq: {
@@ -571,6 +585,24 @@ const experiences: Record<
       ],
       note: "Regjistrimi kushton vetëm 15€ për ekip, pra 5€ për person.",
       limited: "Vendet janë shumë të kufizuara për logjistikë dhe siguri.",
+      rules: [
+        {
+          title: "🛶 Rregullat e The Rescue",
+          desc: "Dy ekipe garojnë njëkohësisht. Pjesëmarrësi 1 nis në këmbë nga bregu, shkon te yoga dock, merr Pjesëmarrësin 2 ulur ose në gjunjë përpara, bën xhiro rreth dock, kthehet në breg, merr Pjesëmarrësin 3 dhe pastaj të tre kthehen te yoga dock. Pjesëmarrësi 1 duhet të qëndrojë në këmbë gjatë gjithë kohës. Nëse bie, duhet të hipë përsëri plotësisht para se të vazhdojë.",
+        },
+        {
+          title: "🎿 Rregullat e The Human Ski",
+          desc: "Dy pjesëmarrës përdorin dy borde paralele. Secili vendos një këmbë në secilin bord dhe lëvizin së bashku deri në finish. Nëse dikush bie ose bordet ndahen shumë, duhet të ndalojnë, t’i rregullojnë bordet paralel, të hipin përsëri dhe të vazhdojnë nga i njëjti vend.",
+        },
+        {
+          title: "🤼 Rregullat e Board Gladiator",
+          desc: "Dy garues qëndrojnë përballë njëri-tjetrit mbi një bord të qëndrueshëm pranë yoga dock. Ata lëkundin bordin me këmbë dhe balancë për të destabilizuar kundërshtarin. Fiton ai që qëndron i fundit në këmbë. Kontakti fizik, shtyrja, prekja me lopatë ose objektet e jashtme nuk lejohen.",
+        },
+        {
+          title: "🎈 Rregullat e Color Hunt",
+          desc: "Dy anëtarë të ekipit përdorin një bord dhe mbledhin objektet lundruese me ngjyrën e tyre. Njëri drejton në këmbë dhe tjetri qëndron në gjunjë përpara për të mbledhur objektet. Fiton ekipi që kthehet i pari në breg me të gjitha objektet e ngjyrës së vet. Ngjyrat e gabuara duhet të kthehen aty ku u gjetën.",
+        },
+      ],
       buttonType: "team",
     },
     fr: {
@@ -592,6 +624,24 @@ const experiences: Record<
       ],
       note: "Inscription seulement 15€ par équipe, soit 5€ par personne.",
       limited: "Places strictement limitées pour la logistique et la sécurité.",
+      rules: [
+        {
+          title: "🛶 Règles de The Rescue",
+          desc: "Deux équipes courent en même temps. Le participant 1 part debout du rivage, rejoint le yoga dock, récupère le participant 2 assis ou à genoux à l’avant, fait le tour du dock, revient au rivage, récupère le participant 3, puis les 3 pagaient jusqu’au yoga dock. Le participant 1 doit rester debout tout le temps. S’il tombe, il doit remonter complètement avant de continuer.",
+        },
+        {
+          title: "🎿 Règles de The Human Ski",
+          desc: "Deux participants utilisent deux planches parallèles. Chacun place un pied sur chaque planche et ils avancent ensemble jusqu’à l’arrivée. Si quelqu’un tombe ou si les planches s’écartent trop, ils doivent s’arrêter, réaligner les planches, remonter et continuer depuis le même endroit.",
+        },
+        {
+          title: "🤼 Règles de Board Gladiator",
+          desc: "Deux concurrents se tiennent face à face sur une planche stable près du yoga dock. Ils font bouger la planche avec les jambes et l’équilibre pour déstabiliser l’adversaire. Le dernier debout gagne. Contact physique, poussée, contact avec la pagaie ou objets extérieurs interdits.",
+        },
+        {
+          title: "🎈 Règles de Color Hunt",
+          desc: "Deux membres utilisent une planche et ramassent les objets flottants de leur couleur. Une personne dirige debout, l’autre reste à genoux à l’avant pour collecter. La première équipe qui revient au rivage avec tous ses objets gagne. Les mauvaises couleurs doivent être remises exactement où elles ont été trouvées.",
+        },
+      ],
       buttonType: "team",
     },
     it: {
@@ -613,6 +663,24 @@ const experiences: Record<
       ],
       note: "Iscrizione solo 15€ per squadra, cioè 5€ a persona.",
       limited: "Posti strettamente limitati per logistica e sicurezza.",
+      rules: [
+        {
+          title: "🛶 Regole di The Rescue",
+          desc: "Due squadre gareggiano contemporaneamente. Il partecipante 1 parte in piedi dalla riva, arriva allo yoga dock, prende il partecipante 2 seduto o in ginocchio davanti, gira intorno al dock, torna a riva, prende il partecipante 3 e poi tutti e 3 tornano al yoga dock. Il partecipante 1 deve restare in piedi per tutto il tempo. Se cade, deve risalire completamente prima di continuare.",
+        },
+        {
+          title: "🎿 Regole di The Human Ski",
+          desc: "Due partecipanti usano due tavole parallele. Ognuno mette un piede su ogni tavola e avanzano insieme fino al traguardo. Se qualcuno cade o le tavole si separano troppo, devono fermarsi, riallineare le tavole, risalire e continuare dallo stesso punto.",
+        },
+        {
+          title: "🤼 Regole di Board Gladiator",
+          desc: "Due concorrenti stanno faccia a faccia su una tavola stabile vicino allo yoga dock. Devono muovere la tavola con gambe ed equilibrio per destabilizzare l’avversario. Vince l’ultimo che rimane in piedi. Vietati contatto fisico, spinte, contatto con la pagaia o oggetti esterni.",
+        },
+        {
+          title: "🎈 Regole di Color Hunt",
+          desc: "Due membri usano una tavola e raccolgono gli oggetti galleggianti del proprio colore. Una persona guida in piedi, l’altra sta in ginocchio davanti per raccogliere. Vince la prima squadra che torna a riva con tutti gli oggetti del proprio colore. I colori sbagliati devono essere rimessi esattamente dove sono stati trovati.",
+        },
+      ],
       buttonType: "team",
     },
     es: {
@@ -634,6 +702,24 @@ const experiences: Record<
       ],
       note: "La inscripción cuesta solo 15€ por equipo, apenas 5€ por persona.",
       limited: "Plazas estrictamente limitadas por logística y seguridad.",
+      rules: [
+        {
+          title: "🛶 Reglas de The Rescue",
+          desc: "Dos equipos compiten al mismo tiempo. El participante 1 sale de pie desde la orilla, llega al yoga dock, recoge al participante 2 sentado o de rodillas al frente, rodea el dock, vuelve a la orilla, recoge al participante 3 y luego los 3 reman hasta tocar el yoga dock. El participante 1 debe permanecer de pie todo el tiempo. Si cae, debe subir completamente antes de continuar.",
+        },
+        {
+          title: "🎿 Reglas de The Human Ski",
+          desc: "Dos participantes usan dos tablas paralelas. Cada persona coloca un pie en cada tabla y avanzan juntas hasta la meta. Si alguien cae o las tablas se separan demasiado, deben detenerse, realinear las tablas, subir de nuevo y continuar desde el mismo lugar.",
+        },
+        {
+          title: "🤼 Reglas de Board Gladiator",
+          desc: "Dos competidores se colocan frente a frente sobre una tabla estable cerca del yoga dock. Mueven la tabla con las piernas y el equilibrio para desestabilizar al oponente. Gana el último en pie. No se permite contacto físico, empujar, tocar con el remo ni usar objetos externos.",
+        },
+        {
+          title: "🎈 Reglas de Color Hunt",
+          desc: "Dos miembros usan una tabla y recogen objetos flotantes de su color asignado. Una persona dirige de pie y la otra va de rodillas al frente para recoger. Gana el primer equipo que vuelve a la orilla con todos los objetos de su color. Los colores equivocados deben devolverse exactamente donde se encontraron.",
+        },
+      ],
       buttonType: "team",
     },
   },
@@ -1029,7 +1115,7 @@ function ActivityCard({
 
 export default function HomePage() {
   const [lang, setLang] = useState<Lang>("en");
-  const [openSection, setOpenSection] = useState<SectionKey>("rentals");
+  const [openSection, setOpenSection] = useState<SectionKey | null>(null);
   const t = text[lang];
 
   const getButtonText = (section: SectionKey) => {
@@ -1043,7 +1129,7 @@ export default function HomePage() {
   };
 
   const toggleSection = (key: SectionKey) => {
-    setOpenSection((current) => (current === key ? "rentals" : key));
+    setOpenSection((current) => (current === key ? null : key));
   };
 
   return (
@@ -1156,11 +1242,6 @@ export default function HomePage() {
           </div>
 
           <div className="price-card">
-            <span>🌊 2 Hours</span>
-            <strong>18€</strong>
-          </div>
-
-          <div className="price-card">
             <span>🧘 SUP Yoga</span>
             <strong>20€</strong>
           </div>
@@ -1173,13 +1254,13 @@ export default function HomePage() {
           <div className="price-card">
             <span>🎫 Training Membership</span>
             <strong>160€</strong>
-            <small>8 sessions</small>
+            <small style={{ color: "#284b57", fontWeight: 800 }}>8 sessions</small>
           </div>
 
           <div className="price-card">
             <span>🏆 Team Challenge</span>
             <strong>15€</strong>
-            <small>per team</small>
+            <small style={{ color: "#284b57", fontWeight: 800 }}>per team</small>
           </div>
 
           <div className="price-card popular">
