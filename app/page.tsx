@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 
 type Lang = "en" | "sq" | "fr" | "it" | "es";
+type SectionKey = "rentals" | "yoga" | "training" | "games";
 
 const whatsapp = "https://wa.me/355696813214";
 const maps =
@@ -42,19 +43,11 @@ const text = {
     mostPopular: "Most Popular",
     call: "Call",
     quickTips: ["Keep your core tight", "Look ahead", "Enjoy the ride"],
-    yoga: "SUP Yoga",
-    yogaTitle: "Find Your Balance on the Water",
-    yogaDesc:
-      "Discover the perfect balance of strength, mindfulness, and nature with our beginner-friendly SUP Yoga Class. Disconnect from routine, connect with the water, and enjoy a calming experience in Sarandë.",
-    yogaBook: "Reserve Your Spot",
-    yogaList: [
-      "Safety briefing before entering the water",
-      "Centering, breathing, and mindfulness",
-      "Gentle warm-up on the board",
-      "Fun balance-focused yoga flow",
-      "Floating Savasana relaxation",
-      "No previous SUP or yoga experience required",
-    ],
+    chooseExperience: "Choose Your SUP Experience",
+    chooseSub: "Rent a board, join a yoga session, train your technique, or compete with friends.",
+    reserve: "Reserve Your Spot",
+    bookTraining: "Book Training",
+    bookTeam: "Book Your Team",
   },
   sq: {
     title: "Bistrica Paddle",
@@ -84,19 +77,11 @@ const text = {
     mostPopular: "Më i Preferuari",
     call: "Telefono",
     quickTips: ["Mbaj trupin stabil", "Shiko përpara", "Shijo udhëtimin"],
-    yoga: "SUP Yoga",
-    yogaTitle: "Gjej Balancën Mbi Ujë",
-    yogaDesc:
-      "Zbuloni balancën perfekte mes forcës, qetësisë dhe natyrës me klasën tonë SUP Yoga për fillestarë. Largohuni nga rutina, lidheni me ujin dhe shijoni një eksperiencë relaksuese në Sarandë.",
-    yogaBook: "Rezervo Vendin Tënd",
-    yogaList: [
-      "Udhëzime sigurie para hyrjes në ujë",
-      "Frymëmarrje dhe qetësim",
-      "Ngrohje e lehtë mbi bord",
-      "Pozicione argëtuese për balancë",
-      "Relaksim Floating Savasana",
-      "Nuk kërkohet eksperiencë në SUP ose yoga",
-    ],
+    chooseExperience: "Zgjidh Eksperiencën SUP",
+    chooseSub: "Merr një bord me qira, bëj yoga, përmirëso teknikën ose garo me miqtë.",
+    reserve: "Rezervo Vendin",
+    bookTraining: "Rezervo Trajnimin",
+    bookTeam: "Rezervo Ekipin",
   },
   fr: {
     title: "Bistrica Paddle",
@@ -130,19 +115,11 @@ const text = {
       "Regardez devant vous",
       "Profitez de la balade",
     ],
-    yoga: "SUP Yoga",
-    yogaTitle: "Trouvez Votre Équilibre sur l’Eau",
-    yogaDesc:
-      "Découvrez l’équilibre parfait entre force, pleine conscience et nature avec notre cours de SUP Yoga adapté aux débutants. Déconnectez de la routine, connectez-vous à l’eau et profitez d’une expérience apaisante à Sarandë.",
-    yogaBook: "Réserver Votre Place",
-    yogaList: [
-      "Briefing sécurité avant d’entrer dans l’eau",
-      "Respiration et pleine conscience",
-      "Échauffement doux sur la planche",
-      "Flow amusant axé sur l’équilibre",
-      "Relaxation Floating Savasana",
-      "Aucune expérience SUP ou yoga requise",
-    ],
+    chooseExperience: "Choisissez Votre Expérience SUP",
+    chooseSub: "Louez une planche, rejoignez le yoga, entraînez votre technique ou jouez en équipe.",
+    reserve: "Réserver Votre Place",
+    bookTraining: "Réserver l’Entraînement",
+    bookTeam: "Réserver Votre Équipe",
   },
   it: {
     title: "Bistrica Paddle",
@@ -172,19 +149,11 @@ const text = {
     mostPopular: "Più Popolare",
     call: "Chiama",
     quickTips: ["Mantieni il core stabile", "Guarda avanti", "Goditi il giro"],
-    yoga: "SUP Yoga",
-    yogaTitle: "Trova il Tuo Equilibrio sull’Acqua",
-    yogaDesc:
-      "Scopri il perfetto equilibrio tra forza, consapevolezza e natura con la nostra lezione di SUP Yoga adatta ai principianti. Stacca dalla routine, connettiti con l’acqua e goditi un’esperienza rilassante a Sarandë.",
-    yogaBook: "Prenota il Tuo Posto",
-    yogaList: [
-      "Briefing di sicurezza prima di entrare in acqua",
-      "Respirazione e mindfulness",
-      "Riscaldamento dolce sulla tavola",
-      "Flow divertente incentrato sull’equilibrio",
-      "Relax Floating Savasana",
-      "Non serve esperienza SUP o yoga",
-    ],
+    chooseExperience: "Scegli la Tua Esperienza SUP",
+    chooseSub: "Noleggia una tavola, prova yoga, allena la tecnica o gareggia con gli amici.",
+    reserve: "Prenota il Tuo Posto",
+    bookTraining: "Prenota l’Allenamento",
+    bookTeam: "Prenota la Tua Squadra",
   },
   es: {
     title: "Bistrica Paddle",
@@ -218,188 +187,455 @@ const text = {
       "Mira hacia adelante",
       "Disfruta el paseo",
     ],
-    yoga: "SUP Yoga",
-    yogaTitle: "Encuentra Tu Equilibrio en el Agua",
-    yogaDesc:
-      "Descubre el equilibrio perfecto entre fuerza, mindfulness y naturaleza con nuestra clase de SUP Yoga para principiantes. Desconecta de la rutina, conecta con el agua y disfruta una experiencia relajante en Sarandë.",
-    yogaBook: "Reserva Tu Lugar",
-    yogaList: [
-      "Instrucciones de seguridad antes de entrar al agua",
-      "Respiración y mindfulness",
-      "Calentamiento suave sobre la tabla",
-      "Flow divertido enfocado en el equilibrio",
-      "Relajación Floating Savasana",
-      "No se requiere experiencia en SUP ni yoga",
-    ],
+    chooseExperience: "Elige Tu Experiencia SUP",
+    chooseSub: "Alquila una tabla, prueba yoga, entrena tu técnica o compite con amigos.",
+    reserve: "Reserva Tu Lugar",
+    bookTraining: "Reservar Entrenamiento",
+    bookTeam: "Reservar Tu Equipo",
   },
 };
 
-
-const yogaExperience = {
-  en: {
-    heading: "🌊 Ready to take your yoga practice to the water? 🧘‍♂️✨",
-    price: "🧘 SUP Yoga • 20€ per person",
-    intro:
-      "Discover the perfect balance of strength, mindfulness, and nature with our SUP Yoga Class! Specially designed for beginners, this experience will help you disconnect from the routine and connect with the water.",
-    together: "Here is what we will experience together:",
-    items: [
-      {
-        title: "📋 Safety First",
-        desc: "A quick briefing on land to get you comfortable and confident on your board.",
-      },
-      {
-        title: "🌬️ Centering & Breathing",
-        desc: "Mindful breathing (Pranayama) to ground yourself and sync with the gentle movement of the water.",
-      },
-      {
-        title: "🧘 Gentle Warm-up",
-        desc: "Low-to-the-board poses to easily adapt to the board's stability.",
-      },
-      {
-        title: "🔥 Active Flow",
-        desc: "Fun, balance-focused poses to challenge and empower you.",
-      },
-      {
-        title: "🌌 Floating Savasana",
-        desc: "The ultimate relaxation—lying down on your board, listening to the water, and drifting into pure bliss.",
-      },
-    ],
-    noExperience:
-      "No previous SUP or yoga experience required! Just bring your energy and a desire to try something amazing. 🏄‍♂️☀️",
-    limited:
-      "🚀 Spaces are limited to ensure everyone gets personal attention.",
+const experiences: Record<
+  SectionKey,
+  Record<
+    Lang,
+    {
+      label: string;
+      heading: string;
+      price: string;
+      image: string;
+      imageAlt: string;
+      intro: string;
+      together: string;
+      items: { title: string; desc: string }[];
+      note: string;
+      limited: string;
+      buttonType: "book" | "reserve" | "training" | "team";
+    }
+  >
+> = {
+  rentals: {
+    en: {
+      label: "🏄 Paddleboard Rentals",
+      heading: "🏄 Explore Sarandë by Paddleboard",
+      price: "10€ for 1 hour • 18€ for 2 hours • 15€ sunset paddle",
+      image: "/paddleinfo.png",
+      imageAlt: "Paddleboard rental information in Sarandë",
+      intro:
+        "Rent a paddleboard and enjoy the coastline of Sarandë from the water. Perfect for beginners, couples, families, and friends.",
+      together: "Rental highlights:",
+      items: [
+        { title: "🏄 1 Hour Rental", desc: "A quick and fun paddle close to the shore." },
+        { title: "🌊 2 Hour Rental", desc: "More time to explore, relax, and enjoy the sea." },
+        { title: "🌅 Sunset Paddle", desc: "A beautiful evening session during the best light of the day." },
+        { title: "📸 Free Photos", desc: "Capture your experience on the water." },
+        { title: "🦺 Safety Included", desc: "Life jackets and basic guidance are provided." },
+        { title: "✨ Beginner Friendly", desc: "Easy, fun, and welcoming for all levels." },
+      ],
+      note: "Find us on the beach in front of Restaurant Centrali.",
+      limited: "Stay in the safe area, respect the sea, and wear your life jacket.",
+      buttonType: "book",
+    },
+    sq: {
+      label: "🏄 Qira Paddleboard",
+      heading: "🏄 Eksploro Sarandën me Paddleboard",
+      price: "10€ për 1 orë • 18€ për 2 orë • 15€ sunset paddle",
+      image: "/paddleinfo.png",
+      imageAlt: "Informacion për qira paddleboard në Sarandë",
+      intro:
+        "Merr një paddleboard me qira dhe shijo bregdetin e Sarandës nga uji. Perfekte për fillestarë, çifte, familje dhe miq.",
+      together: "Përfshirë në qira:",
+      items: [
+        { title: "🏄 Qira 1 Orë", desc: "Një xhiro e shpejtë dhe argëtuese pranë bregut." },
+        { title: "🌊 Qira 2 Orë", desc: "Më shumë kohë për të eksploruar dhe shijuar detin." },
+        { title: "🌅 Sunset Paddle", desc: "Një seancë e bukur në mbrëmje me dritën më të mirë." },
+        { title: "📸 Foto Falas", desc: "Kujtime nga eksperienca jote mbi ujë." },
+        { title: "🦺 Siguria Përfshihet", desc: "Jelekë shpëtimi dhe udhëzime bazë të përfshira." },
+        { title: "✨ Për Fillestarë", desc: "E lehtë, argëtuese dhe për të gjitha nivelet." },
+      ],
+      note: "Na gjeni në plazh përpara Restaurant Centrali.",
+      limited: "Qëndroni në zonën e sigurt, respektoni detin dhe vishni jelekun e shpëtimit.",
+      buttonType: "book",
+    },
+    fr: {
+      label: "🏄 Location Paddleboard",
+      heading: "🏄 Explorez Sarandë en Paddleboard",
+      price: "10€ pour 1 heure • 18€ pour 2 heures • 15€ sunset paddle",
+      image: "/paddleinfo.png",
+      imageAlt: "Informations de location de paddleboard à Sarandë",
+      intro:
+        "Louez une planche et profitez de la côte de Sarandë depuis l’eau. Parfait pour les débutants, couples, familles et amis.",
+      together: "Points forts :",
+      items: [
+        { title: "🏄 Location 1 Heure", desc: "Une sortie rapide et amusante près du rivage." },
+        { title: "🌊 Location 2 Heures", desc: "Plus de temps pour explorer, se détendre et profiter de la mer." },
+        { title: "🌅 Sunset Paddle", desc: "Une belle session du soir avec la meilleure lumière." },
+        { title: "📸 Photos Gratuites", desc: "Gardez un souvenir de votre expérience sur l’eau." },
+        { title: "🦺 Sécurité Incluse", desc: "Gilets de sauvetage et conseils de base fournis." },
+        { title: "✨ Débutants Bienvenus", desc: "Facile, amusant et adapté à tous les niveaux." },
+      ],
+      note: "Retrouvez-nous sur la plage devant le Restaurant Centrali.",
+      limited: "Restez dans la zone sécurisée, respectez la mer et portez votre gilet.",
+      buttonType: "book",
+    },
+    it: {
+      label: "🏄 Noleggio Paddleboard",
+      heading: "🏄 Scopri Sarandë in Paddleboard",
+      price: "10€ per 1 ora • 18€ per 2 ore • 15€ sunset paddle",
+      image: "/paddleinfo.png",
+      imageAlt: "Informazioni noleggio paddleboard a Sarandë",
+      intro:
+        "Noleggia una tavola e goditi la costa di Sarandë dall’acqua. Perfetto per principianti, coppie, famiglie e amici.",
+      together: "Dettagli noleggio:",
+      items: [
+        { title: "🏄 Noleggio 1 Ora", desc: "Un giro veloce e divertente vicino alla riva." },
+        { title: "🌊 Noleggio 2 Ore", desc: "Più tempo per esplorare, rilassarti e goderti il mare." },
+        { title: "🌅 Sunset Paddle", desc: "Una bellissima sessione serale con la luce migliore." },
+        { title: "📸 Foto Gratuite", desc: "Ricordi della tua esperienza sull’acqua." },
+        { title: "🦺 Sicurezza Inclusa", desc: "Giubbotti salvagente e indicazioni base inclusi." },
+        { title: "✨ Per Principianti", desc: "Facile, divertente e adatto a tutti i livelli." },
+      ],
+      note: "Ci trovi sulla spiaggia davanti al Restaurant Centrali.",
+      limited: "Rimani nell’area sicura, rispetta il mare e indossa il giubbotto.",
+      buttonType: "book",
+    },
+    es: {
+      label: "🏄 Alquiler Paddleboard",
+      heading: "🏄 Explora Sarandë en Paddleboard",
+      price: "10€ por 1 hora • 18€ por 2 horas • 15€ sunset paddle",
+      image: "/paddleinfo.png",
+      imageAlt: "Información de alquiler de paddleboard en Sarandë",
+      intro:
+        "Alquila una tabla y disfruta la costa de Sarandë desde el agua. Perfecto para principiantes, parejas, familias y amigos.",
+      together: "Detalles del alquiler:",
+      items: [
+        { title: "🏄 Alquiler 1 Hora", desc: "Un paseo rápido y divertido cerca de la orilla." },
+        { title: "🌊 Alquiler 2 Horas", desc: "Más tiempo para explorar, relajarte y disfrutar el mar." },
+        { title: "🌅 Sunset Paddle", desc: "Una hermosa sesión de tarde con la mejor luz." },
+        { title: "📸 Fotos Gratis", desc: "Recuerdos de tu experiencia en el agua." },
+        { title: "🦺 Seguridad Incluida", desc: "Chalecos salvavidas e instrucciones básicas incluidas." },
+        { title: "✨ Para Principiantes", desc: "Fácil, divertido y apto para todos los niveles." },
+      ],
+      note: "Encuéntranos en la playa frente al Restaurant Centrali.",
+      limited: "Permanece en la zona segura, respeta el mar y usa tu chaleco.",
+      buttonType: "book",
+    },
   },
-  sq: {
-    heading: "🌊 Gati ta çosh praktikën tënde të yogës mbi ujë? 🧘‍♂️✨",
-    price: "🧘 SUP Yoga • 20€ për person",
-    intro:
-      "Zbulo balancën perfekte mes forcës, ndërgjegjësimit dhe natyrës me klasën tonë SUP Yoga! E krijuar posaçërisht për fillestarë, kjo eksperiencë do të të ndihmojë të shkëputesh nga rutina dhe të lidhesh me ujin.",
-    together: "Ja çfarë do të përjetojmë së bashku:",
-    items: [
-      {
-        title: "📋 Siguria Së Pari",
-        desc: "Një udhëzim i shkurtër në tokë për t’u ndier rehat dhe i sigurt mbi bord.",
-      },
-      {
-        title: "🌬️ Qendërzim & Frymëmarrje",
-        desc: "Frymëmarrje e ndërgjegjshme (Pranayama) për t’u qetësuar dhe për t’u sinkronizuar me lëvizjen e butë të ujit.",
-      },
-      {
-        title: "🧘 Ngrohje e Lehtë",
-        desc: "Pozicione pranë bordit për t’u përshtatur lehtë me stabilitetin e tij.",
-      },
-      {
-        title: "🔥 Flow Aktiv",
-        desc: "Pozicione argëtuese me fokus te balanca për të të sfiduar dhe fuqizuar.",
-      },
-      {
-        title: "🌌 Floating Savasana",
-        desc: "Relaksimi përfundimtar—shtrirë mbi bord, duke dëgjuar ujin dhe duke u zhytur në qetësi të plotë.",
-      },
-    ],
-    noExperience:
-      "Nuk kërkohet eksperiencë e mëparshme në SUP apo yoga! Sill vetëm energjinë tënde dhe dëshirën për të provuar diçka të mrekullueshme. 🏄‍♂️☀️",
-    limited:
-      "🚀 Vendet janë të kufizuara për t’i dhënë secilit vëmendje personale.",
+  yoga: {
+    en: {
+      label: "🧘 SUP Yoga",
+      heading: "🌊 Ready to Take Your Yoga Practice to the Water?",
+      price: "20€ per person",
+      image: "/yoga1.jpg",
+      imageAlt: "SUP Yoga class on paddle boards in Sarandë",
+      intro:
+        "Discover the perfect balance of strength, mindfulness, and nature with our beginner-friendly SUP Yoga Class.",
+      together: "What we will experience together:",
+      items: [
+        { title: "📋 Safety First", desc: "A quick land briefing to help you feel comfortable and confident." },
+        { title: "🌬️ Centering & Breathing", desc: "Mindful breathing to connect with the movement of the water." },
+        { title: "🧘 Gentle Warm-up", desc: "Low-to-the-board poses to adapt to the board’s stability." },
+        { title: "🔥 Active Flow", desc: "Fun, balance-focused poses to challenge and empower you." },
+        { title: "🌌 Floating Savasana", desc: "Relax on your board, listen to the water, and drift into calm." },
+      ],
+      note: "No previous SUP or yoga experience required.",
+      limited: "Spaces are limited to ensure everyone gets personal attention.",
+      buttonType: "reserve",
+    },
+    sq: {
+      label: "🧘 SUP Yoga",
+      heading: "🌊 Gati ta Çosh Yogën Mbi Ujë?",
+      price: "20€ për person",
+      image: "/yoga1.jpg",
+      imageAlt: "Klasë SUP Yoga në Sarandë",
+      intro:
+        "Zbulo balancën mes forcës, qetësisë dhe natyrës me klasën tonë SUP Yoga për fillestarë.",
+      together: "Çfarë do të përjetojmë së bashku:",
+      items: [
+        { title: "📋 Siguria Së Pari", desc: "Një udhëzim i shkurtër në tokë për t’u ndier rehat." },
+        { title: "🌬️ Frymëmarrje", desc: "Frymëmarrje e ndërgjegjshme për t’u lidhur me lëvizjen e ujit." },
+        { title: "🧘 Ngrohje e Lehtë", desc: "Pozicione të ulëta mbi bord për stabilitet." },
+        { title: "🔥 Flow Aktiv", desc: "Pozicione argëtuese me fokus te balanca." },
+        { title: "🌌 Floating Savasana", desc: "Relaksim mbi bord duke dëgjuar ujin." },
+      ],
+      note: "Nuk kërkohet eksperiencë e mëparshme në SUP apo yoga.",
+      limited: "Vendet janë të kufizuara për vëmendje personale.",
+      buttonType: "reserve",
+    },
+    fr: {
+      label: "🧘 SUP Yoga",
+      heading: "🌊 Prêt à Emmener Votre Yoga sur l’Eau ?",
+      price: "20€ par personne",
+      image: "/yoga1.jpg",
+      imageAlt: "Cours de SUP Yoga à Sarandë",
+      intro:
+        "Découvrez l’équilibre entre force, pleine conscience et nature avec notre cours de SUP Yoga pour débutants.",
+      together: "Ce que nous vivrons ensemble :",
+      items: [
+        { title: "📋 Sécurité Avant Tout", desc: "Un court briefing sur terre pour vous sentir à l’aise." },
+        { title: "🌬️ Respiration", desc: "Respiration consciente pour suivre le mouvement de l’eau." },
+        { title: "🧘 Échauffement Doux", desc: "Postures basses pour s’adapter à la stabilité." },
+        { title: "🔥 Flow Actif", desc: "Postures amusantes axées sur l’équilibre." },
+        { title: "🌌 Savasana Flottant", desc: "Relaxation sur la planche au son de l’eau." },
+      ],
+      note: "Aucune expérience SUP ou yoga n’est requise.",
+      limited: "Les places sont limitées pour garantir une attention personnalisée.",
+      buttonType: "reserve",
+    },
+    it: {
+      label: "🧘 SUP Yoga",
+      heading: "🌊 Pronto a Portare lo Yoga sull’Acqua?",
+      price: "20€ a persona",
+      image: "/yoga1.jpg",
+      imageAlt: "Lezione SUP Yoga a Sarandë",
+      intro:
+        "Scopri equilibrio, forza e natura con la nostra lezione di SUP Yoga adatta ai principianti.",
+      together: "Cosa vivremo insieme:",
+      items: [
+        { title: "📋 Sicurezza Prima", desc: "Breve briefing a terra per sentirti sicuro." },
+        { title: "🌬️ Respirazione", desc: "Respirazione consapevole seguendo il movimento dell’acqua." },
+        { title: "🧘 Riscaldamento", desc: "Posizioni basse per adattarti alla tavola." },
+        { title: "🔥 Flow Attivo", desc: "Posizioni divertenti focalizzate sull’equilibrio." },
+        { title: "🌌 Savasana Galleggiante", desc: "Relax sulla tavola ascoltando l’acqua." },
+      ],
+      note: "Non serve esperienza SUP o yoga.",
+      limited: "I posti sono limitati per garantire attenzione personale.",
+      buttonType: "reserve",
+    },
+    es: {
+      label: "🧘 SUP Yoga",
+      heading: "🌊 ¿Listo para Llevar tu Yoga al Agua?",
+      price: "20€ por persona",
+      image: "/yoga1.jpg",
+      imageAlt: "Clase de SUP Yoga en Sarandë",
+      intro:
+        "Descubre equilibrio, fuerza y naturaleza con nuestra clase de SUP Yoga para principiantes.",
+      together: "Lo que viviremos juntos:",
+      items: [
+        { title: "📋 Seguridad Primero", desc: "Breve explicación en tierra para sentirte cómodo." },
+        { title: "🌬️ Respiración", desc: "Respiración consciente con el movimiento del agua." },
+        { title: "🧘 Calentamiento", desc: "Posturas bajas para adaptarte a la tabla." },
+        { title: "🔥 Flow Activo", desc: "Posturas divertidas enfocadas en el equilibrio." },
+        { title: "🌌 Savasana Flotante", desc: "Relajación sobre la tabla escuchando el agua." },
+      ],
+      note: "No se requiere experiencia previa en SUP ni yoga.",
+      limited: "Las plazas son limitadas para atención personalizada.",
+      buttonType: "reserve",
+    },
   },
-  fr: {
-    heading: "🌊 Prêt à emmener votre pratique du yoga sur l’eau ? 🧘‍♂️✨",
-    price: "🧘 SUP Yoga • 20€ par personne",
-    intro:
-      "Découvrez l’équilibre parfait entre force, pleine conscience et nature avec notre cours de SUP Yoga ! Spécialement conçu pour les débutants, cette expérience vous aidera à vous déconnecter de la routine et à vous connecter à l’eau.",
-    together: "Voici ce que nous vivrons ensemble :",
-    items: [
-      {
-        title: "📋 La Sécurité Avant Tout",
-        desc: "Un court briefing sur la terre ferme pour vous sentir à l’aise et confiant sur votre planche.",
-      },
-      {
-        title: "🌬️ Centrage & Respiration",
-        desc: "Respiration consciente (Pranayama) pour vous ancrer et vous synchroniser avec le doux mouvement de l’eau.",
-      },
-      {
-        title: "🧘 Échauffement Doux",
-        desc: "Des postures près de la planche pour s’adapter facilement à sa stabilité.",
-      },
-      {
-        title: "🔥 Flow Actif",
-        desc: "Des postures amusantes axées sur l’équilibre pour vous challenger et vous renforcer.",
-      },
-      {
-        title: "🌌 Savasana Flottant",
-        desc: "La relaxation ultime — allongé sur votre planche, à l’écoute de l’eau, en pleine détente.",
-      },
-    ],
-    noExperience:
-      "Aucune expérience préalable en SUP ou en yoga n’est requise ! Apportez simplement votre énergie et l’envie d’essayer quelque chose d’incroyable. 🏄‍♂️☀️",
-    limited:
-      "🚀 Les places sont limitées afin que chacun bénéficie d’une attention personnalisée.",
+  training: {
+    en: {
+      label: "🏋️ SUP Training Club",
+      heading: "🏄‍♂️ Intermediate SUP Training Club",
+      price: "25€ session • 160€ monthly membership",
+      image: "/paddleinfo.png",
+      imageAlt: "SUP training club in Sarandë",
+      intro:
+        "Already know how to paddle? Train, level up your technique, and get an amazing morning workout on the water.",
+      together: "What we do:",
+      items: [
+        { title: "🗓️ Mondays & Thursdays", desc: "7:30 AM, the perfect time for glassy water and no crowd." },
+        { title: "⏳ 1 Full Hour", desc: "A full hour of action, coaching, fitness, and technique." },
+        { title: "🏃 Coastal Fitness Paddle", desc: "Not a slow tour — expect a real workout along the coast." },
+        { title: "🎯 Stroke Coaching", desc: "Real-time corrections to improve technique, power, and control." },
+        { title: "⚡ Speed Intervals & Turns", desc: "High-intensity intervals plus pivot turns around the buoys." },
+        { title: "🧘 Board Stretching", desc: "Finish with stretching and recovery on the water." },
+      ],
+      note: "Requirement: you must be able to stand up easily and maintain a straight course.",
+      limited: "Spots are limited. Leash and PFD are required.",
+      buttonType: "training",
+    },
+    sq: {
+      label: "🏋️ SUP Training Club",
+      heading: "🏄‍♂️ Klubi i Trajnimit SUP për Nivel Mesatar",
+      price: "25€ seanca • 160€ abonimi mujor",
+      image: "/paddleinfo.png",
+      imageAlt: "SUP training në Sarandë",
+      intro:
+        "Nëse di të bësh paddle dhe dëshiron të përmirësosh teknikën, kjo është për ty.",
+      together: "Çfarë bëjmë:",
+      items: [
+        { title: "🗓️ Të Hënën & Të Enjten", desc: "Në 7:30 të mëngjesit, kur uji është i qetë." },
+        { title: "⏳ 1 Orë e Plotë", desc: "Një orë me aksion, trajnim, fitness dhe teknikë." },
+        { title: "🏃 Paddle Fitness", desc: "Jo tur i ngadaltë — është stërvitje e vërtetë." },
+        { title: "🎯 Korrigjim Teknikash", desc: "Udhëzime për teknikë, fuqi dhe kontroll." },
+        { title: "⚡ Intervale & Kthesa", desc: "Intervale shpejtësie dhe pivot turns rreth bovave." },
+        { title: "🧘 Stretching", desc: "Përfundojmë me stretching mbi ujë." },
+      ],
+      note: "Kërkesë: duhet të ngrihesh lehtë në këmbë dhe të mbash drejtimin.",
+      limited: "Vendet janë të kufizuara. Leash dhe jeleku janë të detyrueshme.",
+      buttonType: "training",
+    },
+    fr: {
+      label: "🏋️ Club d’Entraînement SUP",
+      heading: "🏄‍♂️ Club d’Entraînement SUP Intermédiaire",
+      price: "25€ la séance • 160€ abonnement mensuel",
+      image: "/paddleinfo.png",
+      imageAlt: "Entraînement SUP à Sarandë",
+      intro:
+        "Vous savez déjà pagayer ? Améliorez votre technique avec un entraînement matinal sur l’eau.",
+      together: "Ce que nous faisons :",
+      items: [
+        { title: "🗓️ Lundis & Jeudis", desc: "À 7h30, le moment idéal avec une eau calme." },
+        { title: "⏳ 1 Heure Complète", desc: "Une heure d’action, coaching, fitness et technique." },
+        { title: "🏃 Paddle Fitness", desc: "Pas une balade lente — un vrai entraînement côtier." },
+        { title: "🎯 Coaching Technique", desc: "Corrections en temps réel pour puissance et contrôle." },
+        { title: "⚡ Intervalles & Virages", desc: "Intervalles rapides et pivot turns autour des bouées." },
+        { title: "🧘 Étirements", desc: "Fin avec étirements et récupération sur l’eau." },
+      ],
+      note: "Condition : pouvoir se lever facilement et garder une trajectoire droite.",
+      limited: "Places limitées. Leash et gilet de sauvetage obligatoires.",
+      buttonType: "training",
+    },
+    it: {
+      label: "🏋️ SUP Training Club",
+      heading: "🏄‍♂️ Club di Allenamento SUP Intermedio",
+      price: "25€ sessione • 160€ abbonamento mensile",
+      image: "/paddleinfo.png",
+      imageAlt: "Allenamento SUP a Sarandë",
+      intro:
+        "Sai già pagaiare? Migliora la tecnica con un fantastico allenamento mattutino sull’acqua.",
+      together: "Cosa facciamo:",
+      items: [
+        { title: "🗓️ Lunedì & Giovedì", desc: "Alle 7:30, il momento perfetto con acqua calma." },
+        { title: "⏳ 1 Ora Completa", desc: "Un’ora di azione, coaching, fitness e tecnica." },
+        { title: "🏃 Paddle Fitness", desc: "Non è un tour lento — è un vero allenamento." },
+        { title: "🎯 Coaching Tecnico", desc: "Correzioni in tempo reale per potenza e controllo." },
+        { title: "⚡ Intervalli & Virate", desc: "Intervalli intensi e pivot turn intorno alle boe." },
+        { title: "🧘 Stretching", desc: "Si conclude con stretching e recupero sull’acqua." },
+      ],
+      note: "Requisito: riuscire ad alzarsi facilmente e mantenere una rotta dritta.",
+      limited: "Posti limitati. Leash e giubbotto salvagente obbligatori.",
+      buttonType: "training",
+    },
+    es: {
+      label: "🏋️ SUP Training Club",
+      heading: "🏄‍♂️ Club de Entrenamiento SUP Intermedio",
+      price: "25€ sesión • 160€ membresía mensual",
+      image: "/paddleinfo.png",
+      imageAlt: "Entrenamiento SUP en Sarandë",
+      intro:
+        "¿Ya sabes remar? Mejora tu técnica con un entrenamiento increíble por la mañana sobre el agua.",
+      together: "Lo que hacemos:",
+      items: [
+        { title: "🗓️ Lunes & Jueves", desc: "A las 7:30 AM, el momento perfecto con agua tranquila." },
+        { title: "⏳ 1 Hora Completa", desc: "Una hora de acción, coaching, fitness y técnica." },
+        { title: "🏃 Paddle Fitness", desc: "No es un tour lento — es un entrenamiento real." },
+        { title: "🎯 Correcciones Técnicas", desc: "Correcciones en tiempo real para potencia y control." },
+        { title: "⚡ Intervalos & Giros", desc: "Intervalos intensos y pivot turns alrededor de las boyas." },
+        { title: "🧘 Estiramiento", desc: "Terminamos con recuperación y estiramientos sobre el agua." },
+      ],
+      note: "Requisito: poder ponerte de pie fácilmente y mantener línea recta.",
+      limited: "Plazas limitadas. Leash y chaleco salvavidas obligatorios.",
+      buttonType: "training",
+    },
   },
-  it: {
-    heading: "🌊 Pronto a portare la tua pratica yoga sull’acqua? 🧘‍♂️✨",
-    price: "🧘 SUP Yoga • 20€ a persona",
-    intro:
-      "Scopri il perfetto equilibrio tra forza, consapevolezza e natura con la nostra lezione di SUP Yoga! Pensata appositamente per principianti, questa esperienza ti aiuterà a staccare dalla routine e a connetterti con l’acqua.",
-    together: "Ecco cosa vivremo insieme:",
-    items: [
-      {
-        title: "📋 Sicurezza Prima di Tutto",
-        desc: "Un breve briefing a terra per farti sentire comodo e sicuro sulla tavola.",
-      },
-      {
-        title: "🌬️ Centratura & Respirazione",
-        desc: "Respirazione consapevole (Pranayama) per radicarti e sincronizzarti con il dolce movimento dell’acqua.",
-      },
-      {
-        title: "🧘 Riscaldamento Dolce",
-        desc: "Posizioni basse sulla tavola per adattarti facilmente alla sua stabilità.",
-      },
-      {
-        title: "🔥 Flow Attivo",
-        desc: "Posizioni divertenti focalizzate sull’equilibrio per sfidarti e darti energia.",
-      },
-      {
-        title: "🌌 Savasana Galleggiante",
-        desc: "Il relax definitivo—sdraiato sulla tavola, ascoltando l’acqua e lasciandoti andare al benessere.",
-      },
-    ],
-    noExperience:
-      "Non è richiesta alcuna esperienza precedente di SUP o yoga! Porta solo la tua energia e la voglia di provare qualcosa di fantastico. 🏄‍♂️☀️",
-    limited:
-      "🚀 I posti sono limitati per garantire attenzione personale a tutti.",
-  },
-  es: {
-    heading: "🌊 ¿Listo para llevar tu práctica de yoga al agua? 🧘‍♂️✨",
-    price: "🧘 SUP Yoga • 20€ por persona",
-    intro:
-      "Descubre el equilibrio perfecto entre fuerza, mindfulness y naturaleza con nuestra clase de SUP Yoga. Diseñada especialmente para principiantes, esta experiencia te ayudará a desconectarte de la rutina y conectar con el agua.",
-    together: "Esto es lo que viviremos juntos:",
-    items: [
-      {
-        title: "📋 Seguridad Primero",
-        desc: "Una breve explicación en tierra para que te sientas cómodo y seguro sobre tu tabla.",
-      },
-      {
-        title: "🌬️ Centro & Respiración",
-        desc: "Respiración consciente (Pranayama) para conectar contigo y sincronizarte con el suave movimiento del agua.",
-      },
-      {
-        title: "🧘 Calentamiento Suave",
-        desc: "Posturas cerca de la tabla para adaptarte fácilmente a su estabilidad.",
-      },
-      {
-        title: "🔥 Flow Activo",
-        desc: "Posturas divertidas enfocadas en el equilibrio para desafiarte y empoderarte.",
-      },
-      {
-        title: "🌌 Savasana Flotante",
-        desc: "La relajación definitiva: acostarte sobre tu tabla, escuchar el agua y dejarte llevar por la calma.",
-      },
-    ],
-    noExperience:
-      "¡No se requiere experiencia previa en SUP ni yoga! Solo trae tu energía y ganas de probar algo increíble. 🏄‍♂️☀️",
-    limited:
-      "🚀 Las plazas son limitadas para asegurar atención personal para todos.",
+  games: {
+    en: {
+      label: "🏆 SUP Team Challenge",
+      heading: "🏆 SUP Team Challenge",
+      price: "15€ per team • Teams of 3",
+      image: "/paddleinfo.png",
+      imageAlt: "SUP team challenge games in Sarandë",
+      intro:
+        "Gather your team and give it your all. Strategy, balance, teamwork, and pure fun are guaranteed.",
+      together: "The 4 epic games:",
+      items: [
+        { title: "🛶 The Rescue", desc: "A high-stakes progressive relay race." },
+        { title: "🎿 The Human Ski", desc: "Two people stand across two parallel boards and move together." },
+        { title: "🤼 Board Gladiator", desc: "The ultimate balance duel. Last one standing wins." },
+        { title: "🎈 Color Hunt", desc: "Speed and partner strategy to collect floating treasures." },
+        { title: "📍 Yoga Dock Station", desc: "The challenge takes place right at our yoga dock relay station." },
+        { title: "🏄 Boards Provided", desc: "Premium boards included: ST, Monster, Vapor, Fusion, and Magma." },
+      ],
+      note: "Registration is only 15€ per team, just 5€ per person.",
+      limited: "Spots are strictly limited for logistics and safety.",
+      buttonType: "team",
+    },
+    sq: {
+      label: "🏆 SUP Team Challenge",
+      heading: "🏆 Sfida SUP me Ekipe",
+      price: "15€ për ekip • Ekipe me 3 persona",
+      image: "/paddleinfo.png",
+      imageAlt: "Lojëra SUP me ekipe në Sarandë",
+      intro:
+        "Mblidh ekipin dhe jepni maksimumin. Strategji, balancë, punë në ekip dhe shumë argëtim.",
+      together: "4 lojërat epike:",
+      items: [
+        { title: "🛶 The Rescue", desc: "Garë relay progresive me shumë aksion." },
+        { title: "🎿 The Human Ski", desc: "Dy persona mbi dy borde paralele lëvizin së bashku." },
+        { title: "🤼 Board Gladiator", desc: "Duel balance. Fiton ai që qëndron i fundit." },
+        { title: "🎈 Color Hunt", desc: "Shpejtësi dhe strategji për të mbledhur objektet lundruese." },
+        { title: "📍 Yoga Dock Station", desc: "Sfida zhvillohet pranë yoga dock." },
+        { title: "🏄 Bordet Përfshihen", desc: "Borde premium: ST, Monster, Vapor, Fusion dhe Magma." },
+      ],
+      note: "Regjistrimi kushton vetëm 15€ për ekip, pra 5€ për person.",
+      limited: "Vendet janë shumë të kufizuara për logjistikë dhe siguri.",
+      buttonType: "team",
+    },
+    fr: {
+      label: "🏆 Défi SUP en Équipe",
+      heading: "🏆 Défi SUP en Équipe",
+      price: "15€ par équipe • Équipes de 3",
+      image: "/paddleinfo.png",
+      imageAlt: "Jeux SUP en équipe à Sarandë",
+      intro:
+        "Rassemblez votre équipe. Stratégie, équilibre, travail d’équipe et amusement garantis.",
+      together: "Les 4 jeux épiques :",
+      items: [
+        { title: "🛶 The Rescue", desc: "Une course relais progressive pleine d’action." },
+        { title: "🎿 The Human Ski", desc: "Deux personnes sur deux planches parallèles avancent ensemble." },
+        { title: "🤼 Board Gladiator", desc: "Le duel ultime d’équilibre. Le dernier debout gagne." },
+        { title: "🎈 Color Hunt", desc: "Vitesse et stratégie en duo pour collecter les objets flottants." },
+        { title: "📍 Yoga Dock Station", desc: "Le challenge se déroule à la station yoga dock." },
+        { title: "🏄 Planches Fournies", desc: "Planches premium : ST, Monster, Vapor, Fusion et Magma." },
+      ],
+      note: "Inscription seulement 15€ par équipe, soit 5€ par personne.",
+      limited: "Places strictement limitées pour la logistique et la sécurité.",
+      buttonType: "team",
+    },
+    it: {
+      label: "🏆 SUP Team Challenge",
+      heading: "🏆 SUP Team Challenge",
+      price: "15€ per squadra • Squadre da 3",
+      image: "/paddleinfo.png",
+      imageAlt: "Giochi SUP a squadre a Sarandë",
+      intro:
+        "Raduna la tua squadra. Strategia, equilibrio, lavoro di squadra e puro divertimento.",
+      together: "I 4 giochi epici:",
+      items: [
+        { title: "🛶 The Rescue", desc: "Una staffetta progressiva ricca di azione." },
+        { title: "🎿 The Human Ski", desc: "Due persone su due tavole parallele avanzano insieme." },
+        { title: "🤼 Board Gladiator", desc: "Il duello finale di equilibrio. Vince l’ultimo in piedi." },
+        { title: "🎈 Color Hunt", desc: "Velocità e strategia per raccogliere oggetti galleggianti." },
+        { title: "📍 Yoga Dock Station", desc: "La sfida si svolge presso lo yoga dock." },
+        { title: "🏄 Tavole Incluse", desc: "Tavole premium: ST, Monster, Vapor, Fusion e Magma." },
+      ],
+      note: "Iscrizione solo 15€ per squadra, cioè 5€ a persona.",
+      limited: "Posti strettamente limitati per logistica e sicurezza.",
+      buttonType: "team",
+    },
+    es: {
+      label: "🏆 SUP Team Challenge",
+      heading: "🏆 SUP Team Challenge",
+      price: "15€ por equipo • Equipos de 3",
+      image: "/paddleinfo.png",
+      imageAlt: "Juegos SUP por equipos en Sarandë",
+      intro:
+        "Reúne a tu equipo. Estrategia, equilibrio, trabajo en equipo y diversión garantizada.",
+      together: "Los 4 juegos épicos:",
+      items: [
+        { title: "🛶 The Rescue", desc: "Una carrera de relevos progresiva llena de acción." },
+        { title: "🎿 The Human Ski", desc: "Dos personas sobre dos tablas paralelas avanzan juntas." },
+        { title: "🤼 Board Gladiator", desc: "El duelo final de equilibrio. Gana el último en pie." },
+        { title: "🎈 Color Hunt", desc: "Velocidad y estrategia en pareja para recoger objetos flotantes." },
+        { title: "📍 Yoga Dock Station", desc: "El challenge se realiza en la estación yoga dock." },
+        { title: "🏄 Tablas Incluidas", desc: "Tablas premium: ST, Monster, Vapor, Fusion y Magma." },
+      ],
+      note: "La inscripción cuesta solo 15€ por equipo, apenas 5€ por persona.",
+      limited: "Plazas estrictamente limitadas por logística y seguridad.",
+      buttonType: "team",
+    },
   },
 };
 
@@ -508,10 +744,307 @@ const strokes = [
   },
 ];
 
+function ActivityCard({
+  sectionKey,
+  experience,
+  isOpen,
+  onToggle,
+  buttonText,
+}: {
+  sectionKey: SectionKey;
+  experience: (typeof experiences)[SectionKey][Lang];
+  isOpen: boolean;
+  onToggle: (key: SectionKey) => void;
+  buttonText: string;
+}) {
+  return (
+    <article
+      style={{
+        background: "rgba(255,255,255,0.96)",
+        borderRadius: "26px",
+        boxShadow: isOpen
+          ? "0 18px 45px rgba(0,0,0,0.16)"
+          : "0 10px 28px rgba(0,0,0,0.09)",
+        border: isOpen
+          ? "2px solid rgba(10,93,120,0.45)"
+          : "1px solid rgba(10,93,120,0.12)",
+        overflow: "hidden",
+        transition: "all 0.25s ease",
+      }}
+    >
+      <button
+        onClick={() => onToggle(sectionKey)}
+        aria-expanded={isOpen}
+        style={{
+          width: "100%",
+          border: "none",
+          background: "transparent",
+          padding: 0,
+          cursor: "pointer",
+          textAlign: "left",
+        }}
+      >
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+            alignItems: "stretch",
+          }}
+        >
+          <div
+            style={{
+              position: "relative",
+              minHeight: "230px",
+              overflow: "hidden",
+            }}
+          >
+            <Image
+              src={experience.image}
+              alt={experience.imageAlt}
+              width={900}
+              height={1200}
+              style={{
+                width: "100%",
+                height: "100%",
+                minHeight: "230px",
+                objectFit: "cover",
+                display: "block",
+              }}
+            />
+
+            <div
+              style={{
+                position: "absolute",
+                inset: 0,
+                background:
+                  "linear-gradient(to bottom, rgba(0,0,0,0.08), rgba(0,0,0,0.45))",
+              }}
+            />
+
+            <div
+              style={{
+                position: "absolute",
+                left: "1rem",
+                bottom: "1rem",
+                background: "rgba(255,255,255,0.92)",
+                color: "#0a5d78",
+                borderRadius: "999px",
+                padding: "0.45rem 0.85rem",
+                fontWeight: 800,
+                fontSize: "0.9rem",
+                boxShadow: "0 6px 18px rgba(0,0,0,0.18)",
+              }}
+            >
+              {experience.price}
+            </div>
+          </div>
+
+          <div
+            style={{
+              padding: "1.4rem",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              gap: "0.75rem",
+            }}
+          >
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "flex-start",
+                gap: "1rem",
+              }}
+            >
+              <div>
+                <h3
+                  style={{
+                    margin: 0,
+                    color: "#0a5d78",
+                    fontSize: "1.55rem",
+                    lineHeight: 1.15,
+                  }}
+                >
+                  {experience.label}
+                </h3>
+
+                <p
+                  style={{
+                    margin: "0.7rem 0 0",
+                    color: "#284b57",
+                    lineHeight: 1.6,
+                    fontSize: "1rem",
+                  }}
+                >
+                  {experience.intro}
+                </p>
+              </div>
+
+              <span
+                style={{
+                  width: "42px",
+                  height: "42px",
+                  borderRadius: "999px",
+                  background: "#0a5d78",
+                  color: "white",
+                  display: "grid",
+                  placeItems: "center",
+                  fontSize: "1.45rem",
+                  flex: "0 0 auto",
+                  boxShadow: "0 8px 20px rgba(10,93,120,0.25)",
+                }}
+              >
+                {isOpen ? "−" : "+"}
+              </span>
+            </div>
+
+            <div
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "0.35rem",
+                color: "#0a5d78",
+                fontWeight: 800,
+                fontSize: "0.95rem",
+                marginTop: "0.25rem",
+              }}
+            >
+              {isOpen ? "Hide Details" : "View Details"}
+            </div>
+          </div>
+        </div>
+      </button>
+
+      {isOpen && (
+        <div
+          style={{
+            padding: "0 1.4rem 1.6rem",
+            borderTop: "1px solid rgba(10,93,120,0.10)",
+          }}
+        >
+          <div
+            style={{
+              maxWidth: "880px",
+              margin: "0 auto",
+              paddingTop: "1.4rem",
+              textAlign: "center",
+            }}
+          >
+            <h2
+              style={{
+                fontSize: "2rem",
+                color: "#0a5d78",
+                marginBottom: "1rem",
+                lineHeight: 1.2,
+              }}
+            >
+              {experience.heading}
+            </h2>
+
+            <h3
+              style={{
+                fontSize: "1.25rem",
+                marginBottom: "1rem",
+                color: "#143642",
+              }}
+            >
+              {experience.together}
+            </h3>
+
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit, minmax(230px, 1fr))",
+                gap: "0.85rem",
+                marginBottom: "1.5rem",
+              }}
+            >
+              {experience.items.map((item) => (
+                <div
+                  key={item.title}
+                  style={{
+                    padding: "0.9rem 1rem",
+                    borderRadius: "16px",
+                    background: "#f7fcff",
+                    boxShadow: "0 5px 14px rgba(0,0,0,0.05)",
+                    border: "1px solid rgba(10,93,120,0.08)",
+                  }}
+                >
+                  <strong
+                    style={{
+                      display: "block",
+                      color: "#0a5d78",
+                      marginBottom: "0.35rem",
+                    }}
+                  >
+                    {item.title}
+                  </strong>
+                  <span style={{ color: "#284b57", lineHeight: 1.55 }}>
+                    {item.desc}
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            <p
+              style={{
+                lineHeight: 1.7,
+                marginBottom: "0.75rem",
+                color: "#284b57",
+                fontWeight: 600,
+              }}
+            >
+              {experience.note}
+            </p>
+
+            <p
+              style={{
+                lineHeight: 1.7,
+                marginBottom: "1.5rem",
+                color: "#284b57",
+                fontWeight: 600,
+              }}
+            >
+              {experience.limited}
+            </p>
+
+            <a
+              href={whatsapp}
+              target="_blank"
+              className="btn primary"
+              style={{
+                display: "inline-block",
+                marginLeft: "auto",
+                marginRight: "auto",
+              }}
+            >
+              💬 {buttonText}
+            </a>
+          </div>
+        </div>
+      )}
+    </article>
+  );
+}
+
 export default function HomePage() {
   const [lang, setLang] = useState<Lang>("en");
+  const [openSection, setOpenSection] = useState<SectionKey>("rentals");
   const t = text[lang];
-  const y = yogaExperience[lang];
+
+  const getButtonText = (section: SectionKey) => {
+    const buttonType = experiences[section][lang].buttonType;
+
+    if (buttonType === "reserve") return t.reserve;
+    if (buttonType === "training") return t.bookTraining;
+    if (buttonType === "team") return t.bookTeam;
+
+    return t.book;
+  };
+
+  const toggleSection = (key: SectionKey) => {
+    setOpenSection((current) => (current === key ? "rentals" : key));
+  };
 
   return (
     <main>
@@ -613,29 +1146,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          padding: "4rem 1.5rem 2rem",
-        }}
-      >
-        <Image
-          src="/paddle1.png"
-          alt="Paddle Board Instructions 1"
-          width={900}
-          height={1200}
-          style={{
-            width: "100%",
-            maxWidth: "850px",
-            height: "auto",
-            borderRadius: "24px",
-            boxShadow: "0 10px 35px rgba(0,0,0,0.2)",
-            border: "4px solid white",
-          }}
-        />
-      </section>
-
       <section className="prices">
         <h2>{t.prices}</h2>
 
@@ -655,6 +1165,23 @@ export default function HomePage() {
             <strong>20€</strong>
           </div>
 
+          <div className="price-card">
+            <span>🏋️ Training Session</span>
+            <strong>25€</strong>
+          </div>
+
+          <div className="price-card">
+            <span>🎫 Training Membership</span>
+            <strong>160€</strong>
+            <small>8 sessions</small>
+          </div>
+
+          <div className="price-card">
+            <span>🏆 Team Challenge</span>
+            <strong>15€</strong>
+            <small>per team</small>
+          </div>
+
           <div className="price-card popular">
             <small>{t.mostPopular}</small>
             <span>🌅 Sunset Paddle</span>
@@ -663,172 +1190,49 @@ export default function HomePage() {
         </div>
       </section>
 
-
-
-            <section
+      <section
         style={{
-          padding: "5rem 1.5rem",
+          padding: "4rem 1.5rem",
           background: "linear-gradient(135deg, #f7fcff 0%, #e8f7fb 100%)",
         }}
       >
-        <div
-          style={{
-            maxWidth: "1200px",
-            margin: "0 auto",
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
-            gap: "2.5rem",
-            alignItems: "center",
-          }}
-        >
-          <div
-            style={{
-              order: 1,
-            }}
-          >
-            <Image
-              src="/yoga1.jpg"
-              alt="SUP Yoga class on paddle boards in Sarandë"
-              width={900}
-              height={1200}
-              style={{
-                width: "100%",
-                height: "auto",
-                borderRadius: "26px",
-                boxShadow: "0 14px 40px rgba(0,0,0,0.22)",
-                border: "4px solid white",
-              }}
-            />
-          </div>
-
-          <div
-            style={{
-              textAlign: "center",
-              order: 2,
-            }}
-          >
+        <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
+          <div style={{ textAlign: "center", marginBottom: "2rem" }}>
             <h2
               style={{
-                fontSize: "2.3rem",
+                fontSize: "2.4rem",
                 color: "#0a5d78",
-                marginBottom: "1rem",
-                lineHeight: 1.2,
+                marginBottom: "0.75rem",
               }}
             >
-              {y.heading}
+              {t.chooseExperience}
             </h2>
-
-            <div
-              style={{
-                display: "inline-block",
-                background: "#0a5d78",
-                color: "white",
-                padding: "0.5rem 1rem",
-                borderRadius: "999px",
-                fontWeight: 700,
-                marginBottom: "1.5rem",
-              }}
-            >
-              {y.price}
-            </div>
-
             <p
               style={{
-                lineHeight: 1.8,
-                marginBottom: "1.5rem",
                 color: "#284b57",
-                fontSize: "1.05rem",
+                fontSize: "1.08rem",
+                lineHeight: 1.7,
+                maxWidth: "720px",
+                margin: "0 auto",
               }}
             >
-              {y.intro}
+              {t.chooseSub}
             </p>
+          </div>
 
-            <h3
-              style={{
-                fontSize: "1.35rem",
-                marginBottom: "1rem",
-                color: "#143642",
-              }}
-            >
-              {y.together}
-            </h3>
-
-            <div
-              style={{
-                display: "grid",
-                gap: "0.85rem",
-                marginBottom: "2rem",
-              }}
-            >
-              {y.items.map((item) => (
-                <div
-                  key={item.title}
-                  style={{
-                    margin: 0,
-                    padding: "0.95rem 1rem",
-                    borderRadius: "14px",
-                    background: "rgba(255,255,255,0.85)",
-                    boxShadow: "0 6px 18px rgba(0,0,0,0.06)",
-                    textAlign: "center",
-                  }}
-                >
-                  <strong
-                    style={{
-                      display: "block",
-                      color: "#0a5d78",
-                      marginBottom: "0.35rem",
-                    }}
-                  >
-                    {item.title}
-                  </strong>
-                  <span
-                    style={{
-                      color: "#284b57",
-                      lineHeight: 1.6,
-                    }}
-                  >
-                    {item.desc}
-                  </span>
-                </div>
-              ))}
-            </div>
-
-            <p
-              style={{
-                lineHeight: 1.8,
-                marginBottom: "1rem",
-                color: "#284b57",
-                fontSize: "1.05rem",
-                fontWeight: 600,
-              }}
-            >
-              {y.noExperience}
-            </p>
-
-            <p
-              style={{
-                lineHeight: 1.8,
-                marginBottom: "2rem",
-                color: "#284b57",
-                fontSize: "1.05rem",
-                fontWeight: 600,
-              }}
-            >
-              {y.limited}
-            </p>
-
-            <a
-              href={whatsapp}
-              target="_blank"
-              className="btn primary"
-              style={{
-                display: "inline-block",
-                marginLeft: "auto",
-                marginRight: "auto",
-              }}
-            >
-              💬 {t.yogaBook}
-            </a>
+          <div style={{ display: "grid", gap: "1.4rem" }}>
+            {(["rentals", "yoga", "training", "games"] as SectionKey[]).map(
+              (section) => (
+                <ActivityCard
+                  key={section}
+                  sectionKey={section}
+                  experience={experiences[section][lang]}
+                  isOpen={openSection === section}
+                  onToggle={toggleSection}
+                  buttonText={getButtonText(section)}
+                />
+              )
+            )}
           </div>
         </div>
       </section>
